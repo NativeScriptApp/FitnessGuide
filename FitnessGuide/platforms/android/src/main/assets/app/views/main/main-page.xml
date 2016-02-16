@@ -1,0 +1,15 @@
+<Page loaded="pageLoaded" id="home">
+  <!-- <Page.actionBar>
+    <ActionBar title="Title">
+      <ActionBar.titleView> -->
+        <StackLayout orientation="horizontal"  height="50" class="FontAwesome">
+        	<Button text="&#xf015;" tap="onBtnHomeTap" />  
+        	<Button text="&#xf073;" tap="onBtnDaysTap"/>
+        	<Button text="&#xf0f5;" tap="onBtnFoodTap"/>          
+          <Button text="&#xf1c5;" tap="onBtnGalleryTap"/> 
+          <Button text="&#xf041;" tap="onBtnLocationTap" />
+        </StackLayout>
+      <!-- </ActionBar.titleView>
+    </ActionBar>
+  </Page.actionBar> -->
+</Page>

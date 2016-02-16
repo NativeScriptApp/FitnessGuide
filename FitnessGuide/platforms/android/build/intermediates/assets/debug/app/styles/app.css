@@ -1,0 +1,10 @@
+﻿
+#home {
+	background-image: url('~/images/home_background.png');
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+
+.FontAwesome {
+    font-family: FontAwesome;
+}
