@@ -8,3 +8,10 @@
 .FontAwesome {
     font-family: FontAwesome;
 }
+
+.daysBtn{
+	background-color: gray;
+	width: 250;
+	height: 60;
+	margin-top: 10;
+}
