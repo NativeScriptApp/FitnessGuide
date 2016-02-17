@@ -18,7 +18,8 @@ exports.onItemTapped = function(args){
      	moduleName: "./views/days/details",
      	context: {TEXT: list[args.index].firstName +" "+ list[args.index].lastName,
                   TEXT2: list[args.index].lastName,
-                  Title:"Details"},
+                  Title:"Details",
+                  imgSource:list[args.index].pics},
      	animated: true
      };
 

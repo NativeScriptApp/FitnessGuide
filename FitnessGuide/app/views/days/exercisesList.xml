@@ -10,7 +10,10 @@
   <ListView items="{{ items }}" itemTap="onItemTapped" >
             <ListView.itemTemplate>
               <StackLayout  orientation="horizontal">
+              	  
+              	  <Image src="{{ pics }}" stretch ="none" />
                   <Label text="{{ firstName }}" />
+                  <Label text="{{ lastName }}" />
               </StackLayout>
             </ListView.itemTemplate>
     </ListView>

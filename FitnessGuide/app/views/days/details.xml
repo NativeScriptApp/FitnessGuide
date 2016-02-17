@@ -6,6 +6,8 @@
 	</ActionBar>
 
 	<StackLayout>
+		<Image src="{{imgSource}}" stretch ="fill" class="detailImage"/>
+		
 		<Label text="{{TEXT}}" textWrap="true" class="details" />
 		<Label text="{{TEXT2}}" textWrap="true" class="details" />
 	</StackLayout>

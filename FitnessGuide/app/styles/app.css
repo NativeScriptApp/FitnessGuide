@@ -16,3 +16,9 @@
 	height: 60;
 	margin-top: 10;
 }
+.detailImage{
+	box-sizing: 500;
+	width: 300;
+	height: 300;
+	background-color: red;
+}
