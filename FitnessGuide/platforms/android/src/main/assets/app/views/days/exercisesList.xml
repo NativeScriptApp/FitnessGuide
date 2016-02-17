@@ -1,0 +1,17 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" navigatedTo="onNavigatedTo">
+    <ActionBar title="{{listTitle}}">
+  		<ActionBar.actionItems>
+    		<ActionItem  android.systemIcon="ic_menu_add" ios.position="right"/>
+  		</ActionBar.actionItems>
+	</ActionBar>
+  <!-- <ListView items="{{ items }}" itemTap="onItemTapped" >
+            <ListView.itemTemplate>
+              <StackLayout  orientation="horizontal">
+                  <Label text="{{ item }}" />
+              </StackLayout>
+            </ListView.itemTemplate>
+    </ListView> -->
+
+    <Label text="{{ exText }}" textWrap="true" />
+    
+</Page>

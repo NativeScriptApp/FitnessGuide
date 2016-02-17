@@ -4,13 +4,13 @@
       <StackLayout>
         <Label text="" textWrap="true" height="30"/>
         
-        <Button text="Monday" tap="" class="daysBtn"/>
-        <Button text="Tuesday" tap=""  class="daysBtn"/>
-        <Button text="Wednesday" tap="" class="daysBtn" />
-        <Button text="Thursday" tap=""  class="daysBtn"/>
-        <Button text="Friday" tap="" class="daysBtn"/>
-        <Button text="Saturday" tap="" class="daysBtn" />
-        <Button text="Sunday" tap=""  class="daysBtn" />
+        <Button text="Monday" tap="onBtnTapped" class="daysBtn"/>
+        <Button text="Tuesday" tap="onBtnTapped"  class="daysBtn"/>
+        <Button text="Wednesday" tap="onBtnTapped" class="daysBtn" />
+        <Button text="Thursday" tap="onBtnTapped"  class="daysBtn"/>
+        <Button text="Friday" tap="onBtnTapped" class="daysBtn"/>
+        <Button text="Saturday" tap="onBtnTapped" class="daysBtn" />
+        <Button text="Sunday" tap="onBtnTapped"  class="daysBtn" />
       </StackLayout>
       <GridLayout  verticalAlignment="bottom">
         <SegmentedBar id="segments" class="FontAwesome">
