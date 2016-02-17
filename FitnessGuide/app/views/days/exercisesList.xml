@@ -4,14 +4,16 @@
     		<ActionItem  android.systemIcon="ic_menu_add" ios.position="right"/>
   		</ActionBar.actionItems>
 	</ActionBar>
-  <!-- <ListView items="{{ items }}" itemTap="onItemTapped" >
+
+	<Label text="{{ exText }}" textWrap="true" />
+    
+  <ListView items="{{ items }}" itemTap="onItemTapped" >
             <ListView.itemTemplate>
               <StackLayout  orientation="horizontal">
-                  <Label text="{{ item }}" />
+                  <Label text="{{ firstName }}" />
               </StackLayout>
             </ListView.itemTemplate>
-    </ListView> -->
+    </ListView>
 
-    <Label text="{{ exText }}" textWrap="true" />
     
 </Page>

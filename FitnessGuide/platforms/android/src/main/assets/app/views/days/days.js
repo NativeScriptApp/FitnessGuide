@@ -4,6 +4,17 @@ var view = require("ui/core/view");
 var pageNavigator = require("~/common/page-navigator");
 var frameModule = require("ui/frame");
 
+var list = [
+ {firstName:"John", lastName:"Doe"},
+ {firstName:"Pesho", lastName:"Poe"},
+ {firstName:"Misho", lastName:"Moe"},
+ {firstName:"Bibo", lastName:"Boe"},
+ {firstName:"Bibo", lastName:"Boe"},
+ {firstName:"Bibo", lastName:"Boe"},
+ {firstName:"Bibo", lastName:"Boe"},
+ {firstName:"Bibo", lastName:"Boe"}
+];
+
 var pageModules = (function() {
 	var segmentedBar;
 	var pageModules = {
@@ -23,10 +34,12 @@ var pageModules = (function() {
 
 exports.onBtnTapped = function(args){
 console.log(args.object.text)
+
      var navigationEntry = {
      	moduleName: "./views/days/exercisesList",
      	context: {exText: "hfhghjgjhfjhfhjgfhjgfjhfhjs",
-     		   listTitle: args.object.text},
+     		   listTitle: args.object.text,
+     			items: list},
      	animated: true
      };
 
