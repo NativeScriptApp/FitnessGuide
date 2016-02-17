@@ -1,7 +1,16 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <StackLayout>
-    <Label text="Tap the button" class="title"/>
-    <Button text="TAP" tap="{{ tapAction }}" />
-    <Label text="{{ message }}" class="message" textWrap="true"/>
-  </StackLayout>
+  <GridLayout >
+      <GridLayout  verticalAlignment="bottom">
+        
+        <SegmentedBar id="segments" class="FontAwesome">
+          <SegmentedBar.items>
+            <SegmentedBarItem title="&#xf015;" tap="onBtnHomeTap"/>
+            <SegmentedBarItem title="&#xf073;" tap="onBtnDaysTap"/>
+            <SegmentedBarItem title="&#xf0f5;" tap="onBtnFoodTap"/>
+            <SegmentedBarItem title="&#xf1c5;" tap="onBtnGalleryTap"/>
+            <SegmentedBarItem title="&#xf041;" tap="onBtnLocationTap" />
+          </SegmentedBar.items>
+        </SegmentedBar>
+     </GridLayout>
+    </GridLayout>
 </Page>

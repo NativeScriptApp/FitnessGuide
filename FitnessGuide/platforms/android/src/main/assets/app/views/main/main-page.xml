@@ -1,15 +1,29 @@
-<Page loaded="pageLoaded" id="home">
-  <!-- <Page.actionBar>
-    <ActionBar title="Title">
-      <ActionBar.titleView> -->
-        <StackLayout orientation="horizontal"  height="50" class="FontAwesome">
-        	<Button text="&#xf015;" tap="onBtnHomeTap" />  
-        	<Button text="&#xf073;" tap="onBtnDaysTap"/>
-        	<Button text="&#xf0f5;" tap="onBtnFoodTap"/>          
-          <Button text="&#xf1c5;" tap="onBtnGalleryTap"/> 
-          <Button text="&#xf041;" tap="onBtnLocationTap" />
-        </StackLayout>
-      <!-- </ActionBar.titleView>
+<Page loaded="pageLoaded">
+  
+<!-- <Page.actionBar>
+    <ActionBar class="action-bar">
+      
+      <ActionBar.Items>
+        
+          <ActionItem text="Home"  />
+        
+      </ActionBar.Items>
     </ActionBar>
-  </Page.actionBar> -->
+  </Page.actionBar>
+ -->
+  
+  <GridLayout rows="*, auto">
+      <GridLayout  row="0" id="home"/>
+      <GridLayout  row="1" verticalAlignment="bottom">      
+        <SegmentedBar id="segments" class="FontAwesome">
+          <SegmentedBar.items>
+            <SegmentedBarItem title="&#xf015;" tap="onBtnHomeTap"/>
+            <SegmentedBarItem title="&#xf073;" tap="onBtnDaysTap"/>
+            <SegmentedBarItem title="&#xf0f5;" tap="onBtnFoodTap"/>
+            <SegmentedBarItem title="&#xf1c5;" tap="onBtnGalleryTap"/>
+            <SegmentedBarItem title="&#xf041;" tap="onBtnLocationTap" />
+          </SegmentedBar.items>
+        </SegmentedBar>
+     </GridLayout>
+    </GridLayout>
 </Page>
