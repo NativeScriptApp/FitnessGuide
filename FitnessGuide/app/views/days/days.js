@@ -4,7 +4,7 @@ var view = require("ui/core/view");
 var pageNavigator = require("~/common/page-navigator");
 var frameModule = require("ui/frame");
 
-var list = [
+var list = [ // tuka trqbva da idva  currrent day list (mondayList....)
 {firstName:"John", lastName:"Doe", pics:"~/images/Abs/downPartAbs.png"},
 {firstName:"Pesho", lastName:"Poe", pics:"~/images/Abs/downPartAbs.png"},
 {firstName:"Misho", lastName:"Moe", pics:"~/images/Abs/downPartAbs.png"},

@@ -1,10 +1,5 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" navigatedTo="onNavigatedTo">
-	<ActionBar title="{{Title}}">
-  		<ActionBar.actionItems>
-    		<ActionItem  android.systemIcon="ic_menu_add" ios.position="right"/>
-  		</ActionBar.actionItems>
-	</ActionBar>
-
+	<ActionBar title="{{Title}}"/>
 	<StackLayout>
 		<Image src="{{imgSource}}" stretch ="fill" class="detailImage"/>
 		

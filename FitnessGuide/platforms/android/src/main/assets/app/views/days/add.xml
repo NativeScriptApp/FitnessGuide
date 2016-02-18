@@ -1,0 +1,17 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded" navigatedTo="onNavigatedTo">
+	<ActionBar title="ADD"/>
+	<StackLayout>
+		<Label text="{{addText}}" textWrap="true"  height="50"/>
+		<ListView items="items" id="listViewId"  height="400">
+			<ListView.itemTemplate>
+			   <StackLayout  orientation="horizontal">
+				<Image src="{{ pics }}" stretch ="none" />
+				<Label text="{{ firstName }}" />
+				<Label text="{{ lastName }}" />
+               </StackLayout>
+			</ListView.itemTemplate>
+		</ListView>
+		<Button text="ADD" tap="" stretch="fill" class="addBtn"/>
+		
+	</StackLayout>
+</Page>
