@@ -1,16 +1,25 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <GridLayout >
-      <GridLayout  verticalAlignment="bottom">
-        
-        <SegmentedBar id="segments" class="FontAwesome">
-          <SegmentedBar.items>
-            <SegmentedBarItem title="&#xf015;"/>
-            <SegmentedBarItem title="&#xf073;" />
-            <SegmentedBarItem title="&#xf0f5;" />
-            <SegmentedBarItem title="&#xf1c5;" />
-            <SegmentedBarItem title="&#xf041;"/>
-          </SegmentedBar.items>
-        </SegmentedBar>
-     </GridLayout>
-    </GridLayout>
+    <GridLayout rows="*,50,auto">
+
+     <ListView items="{{ photoItems }}"  row="0"  width="300" height="400"> 
+      <ListView.itemTemplate>                
+        <GridLayout>
+            <Image imageSource="{{ itemImage }}" row="0"/>
+        </GridLayout>               
+      </ListView.itemTemplate>
+     </ListView> 
+     <Button  text="{{ message }}"  row="1" tap="{{ tapAction }}"/>
+   <GridLayout  verticalAlignment="bottom" row="2">
+
+    <SegmentedBar id="segments" class="FontAwesome">
+      <SegmentedBar.items>
+        <SegmentedBarItem title="&#xf015;"/>
+        <SegmentedBarItem title="&#xf073;" />
+        <SegmentedBarItem title="&#xf0f5;" />
+        <SegmentedBarItem title="&#xf1c5;" />
+        <SegmentedBarItem title="&#xf041;"/>
+      </SegmentedBar.items>
+    </SegmentedBar>
+  </GridLayout>
+</GridLayout>
 </Page>
