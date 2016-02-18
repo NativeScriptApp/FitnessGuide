@@ -16,7 +16,20 @@
 	height: 60;
 	margin-top: 10;
 }
-.detailImage{
+
+.foodBtn{
+	background-color: gray;
+	width: 250;
+	height: 100;
+	margin-top: 10;
+}
+
+.foodRedBtn{
+	background-color: red;
+	width: 250;
+	height: 100;
+	margin-top: 10;
+}.detailImage{
 	box-sizing: 500;
 	width: 300;
 	height: 300;

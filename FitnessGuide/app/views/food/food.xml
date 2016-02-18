@@ -1,7 +1,14 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <GridLayout >
-      <GridLayout  verticalAlignment="bottom">
-        
+  <GridLayout rows="*, auto">
+    <GridLayout row="0">
+    <StackLayout  orientation="vertical" verticalAlignment="center">        
+        <Button text="Breakfast" tap="onBtnTapped" class="foodBtn"/>
+        <Button text="Lunch" tap="onBtnTapped" class="foodBtn"/>
+        <Button text="Dinner" tap="onBtnTapped" class="foodBtn"/>
+        <Button text="Avoid This" tap="onBtnTapped" class="foodRedBtn"/>
+      </StackLayout>
+  </GridLayout>
+      <GridLayout row="1" verticalAlignment="bottom">        
         <SegmentedBar id="segments" class="FontAwesome">
           <SegmentedBar.items>
             <SegmentedBarItem title="&#xf015;"/>

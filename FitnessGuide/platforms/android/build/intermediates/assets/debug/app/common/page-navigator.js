@@ -9,12 +9,7 @@ var pageNavigator = (function() {
             console.log(toPage);
             var navigateToPage = {
                 moduleName: toPage,                
-                animated: true,
-                navigationTransition: {
-                    transition: "slide ",
-                     duration: 380,
-                     curve: "easeIn"
-                }
+                animated: true
             };
 
             var topmost = frameModule.topmost();
@@ -25,13 +20,13 @@ var pageNavigator = (function() {
             if (segmentedBar.selectedIndex === 0){
                 pageNavigator.navigateTo("./views/main/main-page");
             }else if (segmentedBar.selectedIndex === 1){
-                pageNavigator.navigateTo("./views/food/food");
+                pageNavigator.navigateTo("./views/days/days");
             }else if (segmentedBar.selectedIndex === 2){
                 pageNavigator.navigateTo("./views/food/food");
             }else if (segmentedBar.selectedIndex === 3){
-                pageNavigator.navigateTo("./views/food/food");
+                pageNavigator.navigateTo("./views/gallery/gallery");
             }else if (segmentedBar.selectedIndex === 4){
-                pageNavigator.navigateTo("./views/food/food");
+                pageNavigator.navigateTo("./views/location/location");
             }
         });
         }        

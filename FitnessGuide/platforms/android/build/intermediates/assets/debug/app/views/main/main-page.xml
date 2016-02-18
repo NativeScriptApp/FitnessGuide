@@ -1,23 +1,6 @@
-<Page loaded="pageLoaded" id="home">
+<Page loaded="pageLoaded">
   
-  <!-- <Page.actionBar>
-    <ActionBar>
-      <!-- <ActionBar.titleView> -->
-      <!-- <ActionBar.Items>
-        <StackLayout orientation="horizontal"   class="FontAwesome">
-          
-        	<Button text="&#xf015;" tap="onBtnHomeTap" />  
-        	<Button text="&#xf073;" tap="onBtnDaysTap"/>
-        	<Button text="&#xf0f5;" tap="onBtnFoodTap"/>          
-          <Button text="&#xf1c5;" tap="onBtnGalleryTap"/> 
-          <Button text="&#xf041;" tap="onBtnLocationTap" />
-        
-        </StackLayout>
-        </ActionBar.Items> -->
-      <!-- </ActionBar.titleView> -->
-    <!-- </ActionBar>
-  </Page.actionBar> --> -->
-<Page.actionBar>
+<!-- <Page.actionBar>
     <ActionBar class="action-bar">
       
       <ActionBar.Items>
@@ -27,28 +10,14 @@
       </ActionBar.Items>
     </ActionBar>
   </Page.actionBar>
-
+ -->
   
-  <GridLayout >
-      <GridLayout  verticalAlignment="bottom">
-        <!-- <ActionBar>
-      <ActionBar.titleView>
-      <ActionBar.Items> -->
-        <!-- <StackLayout orientation="horizontal" class="FontAwesome">
-          
-          <Button text="&#xf015;" tap="onBtnHomeTap" />  
-          <Button text="&#xf073;" tap="onBtnDaysTap"/>
-          <Button text="&#xf0f5;" tap="onBtnFoodTap"/>          
-          <Button text="&#xf1c5;" tap="onBtnGalleryTap"/> 
-          <Button text="&#xf041;" tap="onBtnLocationTap" />
-        
-        </StackLayout> -->
-        <!-- </ActionBar.Items>
-      </ActionBar.titleView>
-    </ActionBar> -->
+  <GridLayout rows="*, auto">
+      <GridLayout  row="0" id="home"/>
+      <GridLayout  row="1" verticalAlignment="bottom">      
         <SegmentedBar id="segments" class="FontAwesome">
           <SegmentedBar.items>
-            <SegmentedBarItem title="&#xf015;" tap="onBtnHomeTap"/>
+            <SegmentedBarItem title="&#xf015;" tap="onBtnHomeTap"/>      
             <SegmentedBarItem title="&#xf073;" tap="onBtnDaysTap"/>
             <SegmentedBarItem title="&#xf0f5;" tap="onBtnFoodTap"/>
             <SegmentedBarItem title="&#xf1c5;" tap="onBtnGalleryTap"/>

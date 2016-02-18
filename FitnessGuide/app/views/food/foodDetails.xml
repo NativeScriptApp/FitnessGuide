@@ -1,0 +1,12 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" navigatedTo="onNavigatedTo">
+	<ActionBar title="{{Title}}">
+  		<ActionBar.actionItems>
+    		<ActionItem  android.systemIcon="ic_menu_add" ios.position="right"/>
+  		</ActionBar.actionItems>
+	</ActionBar>
+
+	<StackLayout>
+		<Label text="{{TEXT}}" textWrap="true" class="details" />
+		<Label text="{{TEXT2}}" textWrap="true" class="details" />
+	</StackLayout>
+</Page>

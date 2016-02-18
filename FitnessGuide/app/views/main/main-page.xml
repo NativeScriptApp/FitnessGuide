@@ -17,7 +17,7 @@
       <GridLayout  row="1" verticalAlignment="bottom">      
         <SegmentedBar id="segments" class="FontAwesome">
           <SegmentedBar.items>
-            <SegmentedBarItem title="&#xf015;" tap="onBtnHomeTap"/>
+            <SegmentedBarItem title="&#xf015;" tap="onBtnHomeTap"/>      
             <SegmentedBarItem title="&#xf073;" tap="onBtnDaysTap"/>
             <SegmentedBarItem title="&#xf0f5;" tap="onBtnFoodTap"/>
             <SegmentedBarItem title="&#xf1c5;" tap="onBtnGalleryTap"/>

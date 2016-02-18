@@ -1,0 +1,27 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <GridLayout >
+
+      <StackLayout>
+        <Label text="" textWrap="true" height="30"/>
+        
+        <Button text="Monday" tap="onBtnTapped" class="daysBtn"/>
+        <Button text="Tuesday" tap="onBtnTapped"  class="daysBtn"/>
+        <Button text="Wednesday" tap="onBtnTapped" class="daysBtn" />
+        <Button text="Thursday" tap="onBtnTapped"  class="daysBtn"/>
+        <Button text="Friday" tap="onBtnTapped" class="daysBtn"/>
+        <Button text="Saturday" tap="onBtnTapped" class="daysBtn" />
+        <Button text="Sunday" tap="onBtnTapped"  class="daysBtn" />
+      </StackLayout>
+      <GridLayout  verticalAlignment="bottom">
+        <SegmentedBar id="segments" class="FontAwesome">
+          <SegmentedBar.items>
+            <SegmentedBarItem title="&#xf015;"/>
+            <SegmentedBarItem title="&#xf073;" />
+            <SegmentedBarItem title="&#xf0f5;" />
+            <SegmentedBarItem title="&#xf1c5;" />
+            <SegmentedBarItem title="&#xf041;"/>
+          </SegmentedBar.items>
+        </SegmentedBar>
+     </GridLayout>
+    </GridLayout>
+</Page>

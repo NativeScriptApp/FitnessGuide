@@ -1,14 +1,21 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <GridLayout >
-      <GridLayout  verticalAlignment="bottom">
-        
+  <GridLayout rows="*, auto">
+    <GridLayout row="0">
+    <StackLayout  orientation="vertical" verticalAlignment="center">        
+        <Button text="Breakfast" tap="onBtnTapped" class="foodBtn"/>
+        <Button text="Lunch" tap="onBtnTapped" class="foodBtn"/>
+        <Button text="Dinner" tap="onBtnTapped" class="foodBtn"/>
+        <Button text="Avoid This" tap="onBtnTapped" class="foodRedBtn"/>
+      </StackLayout>
+  </GridLayout>
+      <GridLayout row="1" verticalAlignment="bottom">        
         <SegmentedBar id="segments" class="FontAwesome">
           <SegmentedBar.items>
-            <SegmentedBarItem title="&#xf015;" tap="onBtnHomeTap"/>
-            <SegmentedBarItem title="&#xf073;" tap="onBtnDaysTap"/>
-            <SegmentedBarItem title="&#xf0f5;" tap="onBtnFoodTap"/>
-            <SegmentedBarItem title="&#xf1c5;" tap="onBtnGalleryTap"/>
-            <SegmentedBarItem title="&#xf041;" tap="onBtnLocationTap" />
+            <SegmentedBarItem title="&#xf015;"/>
+            <SegmentedBarItem title="&#xf073;" />
+            <SegmentedBarItem title="&#xf0f5;" />
+            <SegmentedBarItem title="&#xf1c5;" />
+            <SegmentedBarItem title="&#xf041;"/>
           </SegmentedBar.items>
         </SegmentedBar>
      </GridLayout>

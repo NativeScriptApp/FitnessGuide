@@ -1,10 +1,32 @@
 ﻿
-/*#home {
+#home {
 	background-image: url('~/images/home_background.png');
 	background-repeat:no-repeat;
 	background-size: cover;
-}*/
+}
 
 .FontAwesome {
     font-family: FontAwesome;
+    background-color: lightgray; 
+}
+
+.daysBtn{
+	background-color: gray;
+	width: 250;
+	height: 60;
+	margin-top: 10;
+}
+
+.foodBtn{
+	background-color: gray;
+	width: 250;
+	height: 100;
+	margin-top: 10;
+}
+
+.foodRedBtn{
+	background-color: red;
+	width: 250;
+	height: 100;
+	margin-top: 10;
 }
