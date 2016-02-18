@@ -5,14 +5,14 @@ var pageNavigator = require("~/common/page-navigator");
 var frameModule = require("ui/frame");
 
 var list = [ // tuka trqbva da idva  currrent day list (mondayList....)
-{firstName:"John", lastName:"Doe", pics:"~/images/Abs/downPartAbs.png"},
-{firstName:"Pesho", lastName:"Poe", pics:"~/images/Abs/downPartAbs.png"},
-{firstName:"Misho", lastName:"Moe", pics:"~/images/Abs/downPartAbs.png"},
+{firstName:"John", lastName:"Doe", pics:"~/images/Abs/rotateAbs.jpg"},
+{firstName:"Pesho", lastName:"Poe", pics:"~/images/Abs/rotateAbs.jpg"},
+{firstName:"Misho", lastName:"Moe", pics:"~/images/Abs/rotateAbs.jpg"},
+{firstName:"Bibo", lastName:"Boe", pics:"~/images/Abs/rotateAbs.jpg"},
+{firstName:"Bibo", lastName:"Boe", pics:"~/images/Abs/rotateAbs.jpg"},
 {firstName:"Bibo", lastName:"Boe", pics:"~/images/Abs/downPartAbs.png"},
 {firstName:"Bibo", lastName:"Boe", pics:"~/images/Abs/downPartAbs.png"},
-{firstName:"Bibo", lastName:"Boe", pics:"~/images/Abs/downPartAbs.png"},
-{firstName:"Bibo", lastName:"Boe", pics:"~/images/Abs/downPartAbs.png"},
-{firstName:"Bibo", lastName:"Boe", pics:"~/images/Abs/downPartAbs.png"}
+{firstName:"Bibo", lastName:"Boe", pics:"~/images/Abs/rotateAbs.jpg"}
 ];
 
 var pageModules = (function() {
