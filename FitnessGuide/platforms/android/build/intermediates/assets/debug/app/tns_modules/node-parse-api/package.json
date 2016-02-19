@@ -1,52 +1,18 @@
 {
-  "_args": [
-    [
-      "node-parse-api",
-      "C:\\Users\\Ric\\Documents\\GitHub\\FitnessGuide\\FitnessGuide"
-    ]
-  ],
-  "_from": "node-parse-api@latest",
-  "_id": "node-parse-api@0.3.8",
-  "_inCache": true,
-  "_installable": true,
-  "_location": "/node-parse-api",
-  "_nodeVersion": "0.12.7",
-  "_npmUser": {
-    "email": "mleveton@prepcloud.com",
-    "name": "leveton"
-  },
-  "_npmVersion": "2.11.3",
-  "_phantomChildren": {},
-  "_requested": {
-    "name": "node-parse-api",
-    "raw": "node-parse-api",
-    "rawSpec": "",
-    "scope": null,
-    "spec": "latest",
-    "type": "tag"
-  },
-  "_requiredBy": [
-    "#USER"
-  ],
-  "_resolved": "https://registry.npmjs.org/node-parse-api/-/node-parse-api-0.3.8.tgz",
-  "_shasum": "55e6b6d319108fa703c7b50bfae996a6e53b87f5",
-  "_shrinkwrap": null,
-  "_spec": "node-parse-api",
-  "_where": "C:\\Users\\Ric\\Documents\\GitHub\\FitnessGuide\\FitnessGuide",
+  "name": "node-parse-api",
+  "description": "A Parse.com REST API client for Node.js",
+  "version": "0.3.8",
   "author": {
-    "email": "tenorviol@yahoo.com",
-    "name": "Chris Johnson"
-  },
-  "bugs": {
-    "url": "https://github.com/leveton/node-parse-api/issues"
+    "name": "Chris Johnson",
+    "email": "tenorviol@yahoo.com"
   },
   "contributors": [
     {
-      "name": "Rodrigo Martell"
-    },
-    {
       "name": "Daniel Gasienica",
       "email": "daniel@gasienica.ch"
+    },
+    {
+      "name": "Jakub Knejzlík"
     },
     {
       "name": "Sam Saccone"
@@ -67,7 +33,7 @@
       "name": "Christoffer Niska"
     },
     {
-      "name": "Jakub Knejzlík"
+      "name": "Rodrigo Martell"
     },
     {
       "name": "Joe Bruggeman"
@@ -94,44 +60,52 @@
       "name": "Appsaloon"
     }
   ],
-  "dependencies": {},
-  "description": "A Parse.com REST API client for Node.js",
+  "main": "index",
+  "scripts": {
+    "test": "nodeunit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leveton/node-parse-api.git"
+  },
+  "keywords": [
+    "parse",
+    "mbaas",
+    "rest",
+    "push notifications",
+    "api"
+  ],
+  "engines": {
+    "node": ">= 0.4.0"
+  },
   "devDependencies": {
     "nodeunit": "~0.9.0"
   },
-  "directories": {},
+  "gitHead": "33deab402af64d07965f75df4f89fcf128b178bd",
+  "bugs": {
+    "url": "https://github.com/leveton/node-parse-api/issues"
+  },
+  "homepage": "https://github.com/leveton/node-parse-api#readme",
+  "_id": "node-parse-api@0.3.8",
+  "_shasum": "55e6b6d319108fa703c7b50bfae996a6e53b87f5",
+  "_from": "node-parse-api@>=0.3.8 <0.4.0",
+  "_npmVersion": "2.11.3",
+  "_nodeVersion": "0.12.7",
+  "_npmUser": {
+    "name": "leveton",
+    "email": "mleveton@prepcloud.com"
+  },
   "dist": {
     "shasum": "55e6b6d319108fa703c7b50bfae996a6e53b87f5",
     "tarball": "http://registry.npmjs.org/node-parse-api/-/node-parse-api-0.3.8.tgz"
   },
-  "engines": {
-    "node": ">= 0.4.0"
-  },
-  "gitHead": "33deab402af64d07965f75df4f89fcf128b178bd",
-  "homepage": "https://github.com/leveton/node-parse-api#readme",
-  "keywords": [
-    "api",
-    "mbaas",
-    "parse",
-    "push notifications",
-    "rest"
-  ],
-  "main": "index",
   "maintainers": [
     {
       "name": "leveton",
       "email": "mleveton@prepcloud.com"
     }
   ],
-  "name": "node-parse-api",
-  "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/leveton/node-parse-api.git"
-  },
-  "scripts": {
-    "test": "nodeunit"
-  },
-  "version": "0.3.8"
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/node-parse-api/-/node-parse-api-0.3.8.tgz",
+  "readme": "ERROR: No README data found!"
 }

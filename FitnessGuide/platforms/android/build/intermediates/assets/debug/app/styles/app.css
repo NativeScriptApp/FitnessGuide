@@ -29,4 +29,13 @@
 	width: 250;
 	height: 100;
 	margin-top: 10;
+}.detailImage{
+	box-sizing: 500;
+	width: 300;
+	height: 300;
+	background-color: red;
+}
+
+.addBtn{
+	margin-top: 40;
 }

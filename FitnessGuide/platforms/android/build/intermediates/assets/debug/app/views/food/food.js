@@ -11,7 +11,8 @@ var pageModules = (function() {
 		    segmentedBar = view.getViewById(page, "segments");
             segmentedBar.selectedIndex = 2;
             pageNavigator.attachNavigation(segmentedBar);
-			data.get();			
+			data.get();	
+			data.post();			
 		}
 	};
 

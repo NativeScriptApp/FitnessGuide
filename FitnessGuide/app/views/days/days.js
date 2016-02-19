@@ -10,8 +10,8 @@ var list = [ // tuka trqbva da idva  currrent day list (mondayList....)
 {firstName:"Misho", lastName:"Moe", pics:"~/images/Abs/rotateAbs.jpg"},
 {firstName:"Bibo", lastName:"Boe", pics:"~/images/Abs/rotateAbs.jpg"},
 {firstName:"Bibo", lastName:"Boe", pics:"~/images/Abs/rotateAbs.jpg"},
-{firstName:"Bibo", lastName:"Boe", pics:"~/images/Abs/downPartAbs.png"},
-{firstName:"Bibo", lastName:"Boe", pics:"~/images/Abs/downPartAbs.png"},
+{firstName:"Bibo", lastName:"Boe", pics:"~/images/Abs/downPartAbs.jpg"},
+{firstName:"Bibo", lastName:"Boe", pics:"~/images/Abs/downPartAbs.jpg"},
 {firstName:"Bibo", lastName:"Boe", pics:"~/images/Abs/rotateAbs.jpg"}
 ];
 
