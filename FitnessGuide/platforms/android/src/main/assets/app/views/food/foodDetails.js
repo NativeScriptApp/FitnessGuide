@@ -1,6 +1,6 @@
 'use strict';
 var observableModule = require("data/observable");
-var source = new observableModule.Observable();
+//var source = new observableModule.Observable();
 var vm = require("~/views/food/foodDetails-view-model");
 
 function onNavigatedTo(args){

@@ -1,4 +1,10 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <ActionBar>
+      <ActionBar.actionItems>
+        <ActionItem  android.systemIcon="ic_menu_add" ios.position="right" tap="goToAddFood"/>
+      </ActionBar.actionItems>
+  </ActionBar>
+
   <GridLayout rows="*, auto">
     <GridLayout row="0">
     <StackLayout  orientation="vertical" verticalAlignment="center">        

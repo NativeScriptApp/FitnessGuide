@@ -1,0 +1,18 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" navigatedTo="onNavigatedTo">
+	<ActionBar title="{{title}}">
+  		<ActionBar.actionItems>
+    		<ActionItem  android.systemIcon="ic_menu_add" ios.position="right"/>
+  		</ActionBar.actionItems>
+	</ActionBar>
+
+	<StackLayout>
+		
+		<Image src="{{picture}}" stretch ="fill" class="detailImage"/>
+		<TextField hint="First food" text="{{  }}" />
+		<TextField hint="Second food" text="{{  }}" />
+		<TextField hint="Third food" text="{{  }}" />
+        <ListPicker items="{{ items }}" selectedIndex="{{ selectedIndex }}" horizontalAlignment="center"/>
+            
+        
+	</StackLayout>
+</Page>

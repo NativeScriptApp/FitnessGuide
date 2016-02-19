@@ -11,6 +11,9 @@ function onNavigatedTo(args){
   items = page.navigationContext.items;
 }
 
+function goToAddFood(){
+	pageNavigator.navigateTo("./views/food/addFood");
+}
 
 exports.onItemTapped = function(args){
     var index = args.index;
@@ -19,3 +22,4 @@ exports.onItemTapped = function(args){
 };
 
 exports.onNavigatedTo = onNavigatedTo;
+exports.goToAddFood = goToAddFood;

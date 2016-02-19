@@ -31,6 +31,10 @@ var pageModules = (function() {
 			};
 			
 			pageNavigator.navigateTo(toView,context);
+		},
+
+		goToAddFood:function (){
+			pageNavigator.navigateTo("./views/food/addFood");
 		}
 	};
 
@@ -39,3 +43,4 @@ var pageModules = (function() {
 
 exports.pageLoaded = pageModules.pageLoaded;
 exports.onBtnTapped = pageModules.onBtnTapped;
+exports.goToAddFood = pageModules.goToAddFood;

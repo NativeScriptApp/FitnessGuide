@@ -1,8 +1,6 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" navigatedTo="onNavigatedTo">
 	<ActionBar title="{{title}}">
-  		<ActionBar.actionItems>
-    		<ActionItem  android.systemIcon="ic_menu_add" ios.position="right"/>
-  		</ActionBar.actionItems>
+  		
 	</ActionBar>
 
 	<StackLayout>
