@@ -24,6 +24,8 @@ var parseQuery = (function(){
 
       				for (var i = 0; i < gameScore.length; i++) {
       					if(className == "Exercise"){
+                        global.pictures.push(gameScore[i].get("image"));
+                        
       						global.exercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
       													  subMuscle: gameScore[i].get("subMuscle"),
       														  pics : imageFromSource(gameScore[i].get("image"))});
@@ -108,14 +110,14 @@ var parseQuery = (function(){
             });
          },
    				//post ne raboti zasega!
-   				post:function(className){
+   				post:function(className,mainMuscle,subMuscle,image,explanation){
    					var Exercise = Parse.Object.extend(className);
    					var exercise = new Exercise();
 
-   					exercise.set("mainMuscle", "daaaaamooooyyyYEEEESSSS");
-   					exercise.set("subMuscle", "Sean Plott");
-   					exercise.set("image", "imamamamaaaage");
-                  exercise.set("explanation", "teteteeteteteext");
+   					exercise.set("mainMuscle", mainMuscle);
+   					exercise.set("subMuscle", subMuscle);
+   					exercise.set("image", image);
+                  exercise.set("explanation", explanation);
 
    					exercise.save(null, {
    						success: function(exercise) {

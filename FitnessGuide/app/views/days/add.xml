@@ -2,7 +2,7 @@
 	<ActionBar title="ADD"/>
 	<StackLayout>
 		<Label text="All exercises" textWrap="true"  height="50"/>
-		<ListView items="items" id="listViewId"  height="400">
+		<ListView items="items" id="listViewId"  itemTap="onItemTapped"  height="400">
 			<ListView.itemTemplate>
 			   <StackLayout  orientation="horizontal">
 				<Image src="{{ pics }}" stretch ="none" />
