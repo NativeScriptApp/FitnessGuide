@@ -1,9 +1,11 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" navigatedTo="onNavigatedTo">
 	<ActionBar title="{{Title}}"/>
 	<StackLayout>
-		<Image src="{{imgSource}}" stretch ="fill" class="detailImage"/>
+		<Image src="{{pics}}" stretch ="fill" class="detailImage"/>
+		<StackLayout orientation="vertical">
+			<Label text="{{mainMuscle}}" textWrap="true" class="details" />
+		    <Label text="{{subMuscle}}" textWrap="true" class="details" />
+		</StackLayout>
 		
-		<Label text="{{TEXT}}" textWrap="true" class="details" />
-		<Label text="{{TEXT2}}" textWrap="true" class="details" />
 	</StackLayout>
 </Page>

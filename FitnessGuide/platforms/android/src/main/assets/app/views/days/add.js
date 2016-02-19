@@ -1,3 +1,5 @@
+var observableArrayModule = require("data/observable-array");
+
 var data = require("~/common/data");
 
 function onNavigatedTo(args){
@@ -13,4 +15,9 @@ function onNavigatedTo(args){
 
 }
 
+function onPageClosed() {
+	global.exercises = new observableArrayModule.ObservableArray();
+}
+
 exports.onNavigatedTo = onNavigatedTo;
+exports.onPageClosed = onPageClosed;

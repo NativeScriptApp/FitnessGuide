@@ -1,4 +1,4 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded" navigatedTo="onNavigatedTo">
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded" unloaded="onPageClosed" navigatedTo="onNavigatedTo">
 	<ActionBar title="ADD"/>
 	<StackLayout>
 		<Label text="{{addText}}" textWrap="true"  height="50"/>
