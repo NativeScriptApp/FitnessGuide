@@ -1,15 +1,10 @@
 var Parse = require("~/parse").Parse;
 Parse.initialize("yyiYli6L5Kpr4DxaNdzBxX8sw4PzS28PMIOuaywU", "jtXjRMjijevWLMSciiaHB2pnloFpUSC9AHtjE5Q7");
 localStorage = require("localStorage");
-console.log(localStorage);
 
 var imageSourceModule = require("image-source");
 var fileSystemModule = require("file-system");
 var directory = "/../images/";
-// XMLHttpRequest = require("xmlhttprequest");
-// console.log(XMLHttpRequest);
-
-
 
 var parseQuery = (function(){
 	
@@ -101,6 +96,8 @@ var parseQuery = (function(){
                         {
                            firstFood: result[i].get("firstFood"),
                            secondFood: result[i].get("secondFood"),
+                           thirdFood: result[i].get("thirdFood"),
+                           explanation: result[i].get("explanation"),
                            picture: imageFromSource(result[i].get("picture"))
                         });
                   }

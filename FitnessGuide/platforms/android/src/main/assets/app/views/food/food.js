@@ -9,6 +9,7 @@ var pageModules = (function() {
 		 pageLoaded:function(args) {
 		    var page = args.object;
 			global.dbData.length = 0;
+			
 		    segmentedBar = view.getViewById(page, "segments");
             segmentedBar.selectedIndex = 2;
             pageNavigator.attachNavigation(segmentedBar);

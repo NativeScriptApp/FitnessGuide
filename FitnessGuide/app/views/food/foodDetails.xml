@@ -1,12 +1,17 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" navigatedTo="onNavigatedTo">
-	<ActionBar title="{{Title}}">
+	<ActionBar title="{{title}}">
   		<ActionBar.actionItems>
     		<ActionItem  android.systemIcon="ic_menu_add" ios.position="right"/>
   		</ActionBar.actionItems>
 	</ActionBar>
 
 	<StackLayout>
-		<Label text="{{TEXT}}" textWrap="true" class="details" />
-		<Label text="{{TEXT2}}" textWrap="true" class="details" />
+		<Image src="{{picture}}" stretch ="fill" class="detailImage"/>
+		<StackLayout orientation="vertical">
+			<Label text="{{products}}" textWrap="true" class="details" />
+		    <Label text="Description:" textWrap="true" class="details" />
+		    <Label text="{{explanation}}" textWrap="true" class="details" />
+		</StackLayout>
+		
 	</StackLayout>
 </Page>

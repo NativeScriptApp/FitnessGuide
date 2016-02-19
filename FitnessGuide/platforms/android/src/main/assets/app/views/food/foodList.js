@@ -1,25 +1,21 @@
 var observableModule = require("data/observable");
 var source = new observableModule.Observable();
 var observableArrayModule = require("data/observable-array");
+var pageNavigator = require("~/common/page-navigator");
+var items;
 
 function onNavigatedTo(args){
 
   var page = args.object;
   page.bindingContext = page.navigationContext;
+  items = page.navigationContext.items;
 }
 
 
 exports.onItemTapped = function(args){
-//console.log(args.index);
-
-     var navigationEntry = {
-     	moduleName: "./views/days/details",
-     	context: {TEXT: list[args.index].firstName +" "+ list[args.index].lastName,
-                  TEXT2: list[args.index].lastName,
-                  Title:"Details"},
-     	animated: true
-     };
-
-     topmost.navigate(navigationEntry);
+    var index = args.index;
+    var toView = "./views/food/foodDetails";
+    pageNavigator.navigateTo(toView,items.getItem(index));
 };
+
 exports.onNavigatedTo = onNavigatedTo;
