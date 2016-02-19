@@ -16,11 +16,11 @@ function onNavigatedTo(args){
 
 	var listView = page.getViewById("listViewId");
 
-    data.get("Exercise");
-	listView.items = global.exercises;
+  data.get("Exercise");
+  listView.items = global.exercises;
 
-	page.bindingContext = page.navigationContext;
-	className = page.navigationContext.className + "Exercise";
+  page.bindingContext = page.navigationContext;
+  className = page.navigationContext.className + "Exercise";
 
 }
 
@@ -28,20 +28,20 @@ function onPageClosed() {
 	global.exercises = new observableArrayModule.ObservableArray();
 }
 
- 
+
 function onItemTapped(args){
-    var index = args.index;
+  var index = args.index;
 
-	 mainMuscle = global.exercises.getItem(index).mainMuscle;
-     subMuscle = global.exercises.getItem(index).subMuscle;
-     image = global.pictures.getItem(index);
-     explanation = global.exercises.getItem(index).explanation;
+  mainMuscle = global.exercises.getItem(index).mainMuscle;
+  subMuscle = global.exercises.getItem(index).subMuscle;
+  image = global.pictures.getItem(index);
+  explanation = global.exercises.getItem(index).explanation;
 
-    
+
 };
 function imageFromSource(imageName) {
-      	return imageSourceModule.fromFile(fileSystemModule.path.join(__dirname, directory + imageName + ".jpg"));
-      };
+ return imageSourceModule.fromFile(fileSystemModule.path.join(__dirname, directory + imageName + ".jpg"));
+};
 
 function addButton (){
 	console.log(className);
@@ -49,37 +49,52 @@ function addButton (){
 	console.log(subMuscle);
 	console.log(image);
 	console.log(explanation);
-	 data.post(className,mainMuscle,subMuscle,image,explanation);
+  if (mainMuscle != undefined) {
+
+   data.post(className,mainMuscle,subMuscle,image,explanation);
 
 
-	 var obj = {mainMuscle: mainMuscle,
-      							 subMuscle: subMuscle ,
-      						     pics : imageFromSource(image),
-      						     explanation: explanation};
+   var obj = {mainMuscle: mainMuscle,
+    subMuscle: subMuscle ,
+    pics : imageFromSource(image),
+    explanation: explanation};
     if (className == "MondayExercise") {
     	global.mondayExercises.push(obj);
+      obj = {};
     }
     else if (className == "TuesdayExercise") {
     	global.tuesdayExercises.push(obj);
+       obj = {};
     }
     else if (className == "WednesdayExercise") {
     	global.wednesdayExercises.push(obj);
+       obj = {};
     }
     else if (className == "ThursdayExercise") {
     	global.thursdayExercises.push(obj);
+       obj = {};
     }
     else if (className == "FridayExercise") {
     	global.fridayExercises.push(obj);
+       obj = {};
     }
     else if (className == "SaturdayExercise") {
     	global.saturdayExercises.push(obj);
+       obj = {};
     }
     else if (className == "SundayExercise") {
     	global.sundayExercises.push(obj);
+       obj = {};
     }
-	
-
-	 topmost.goBack();
+  } else {
+    alert('Not added! You did not select an exercise! ');
+  }
+  mainMuscle = undefined;
+  subMuscle = undefined;
+  image = undefined;
+  explanation = undefined;
+  
+  topmost.goBack();
 }
 
 exports.onNavigatedTo = onNavigatedTo;
