@@ -108,39 +108,23 @@ var parseQuery = (function(){
             });
          },
    				//post ne raboti zasega!
-   				post:function(){
-   					var GameScore = Parse.Object.extend("GameScore");
-   					var gameScore = new GameScore();
+   				post:function(className){
+   					var Exercise = Parse.Object.extend(className);
+   					var exercise = new Exercise();
 
-   					gameScore.set("score", 1337);
-   					gameScore.set("playerName", "Sean Plott");
-   					gameScore.set("cheatMode", false);
+   					exercise.set("mainMuscle", "daaaaamooooyyyYEEEESSSS");
+   					exercise.set("subMuscle", "Sean Plott");
+   					exercise.set("image", "imamamamaaaage");
+                  exercise.set("explanation", "teteteeteteteext");
 
-   					gameScore.save(null, {
-   						success: function(gameScore) {
-   							console.log('New object created with objectId: ' + gameScore.id);
+   					exercise.save(null, {
+   						success: function(exercise) {
+   							alert('Exercise successfully added ! ');
    						},
-   						error: function(gameScore, error) {
-   							alert('Failed to create new object, with error code: ' + error.message);
+   						error: function(exercise, error) {
+   							alert('Error: exercise not added: ' + error.message);
    						}
    					});
-
-   					var query = new Parse.Query(GameScore);
-			//query.equalTo("playerName", "Dan Stemkoski");
-			query.find({
-				success: function(results) {
-					console.log("Successfully retrieved " + results.length + " scores.");
-			    // Do something with the returned Parse.Object values
-			    for (var i = 0; i < results.length; i++) {
-			    	var object = results[i];
-			    	console.log(object.id + ' - ' + object.get('playerName'));
-			    }
-			},
-			error: function(error) {
-				alert("Error: " + error.code + " " + error.message);
-			}
-		});
-
 		}
 	};
 

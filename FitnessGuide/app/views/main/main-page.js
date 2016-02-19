@@ -3,7 +3,6 @@
 //var frameModule = require("ui/frame");
 //var pagesModule = require("ui/page");
 var view = require("ui/core/view");
-
 var pageNavigator = require("~/common/page-navigator");
 
 var pageModules = (function() {

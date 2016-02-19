@@ -1,7 +1,7 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded" unloaded="onPageClosed" navigatedTo="onNavigatedTo">
 	<ActionBar title="ADD"/>
 	<StackLayout>
-		<Label text="{{addText}}" textWrap="true"  height="50"/>
+		<Label text="All exercises" textWrap="true"  height="50"/>
 		<ListView items="items" id="listViewId"  height="400">
 			<ListView.itemTemplate>
 			   <StackLayout  orientation="horizontal">
@@ -13,7 +13,7 @@
                </StackLayout>
 			</ListView.itemTemplate>
 		</ListView>
-		<Button text="ADD" tap="" stretch="fill" class="addBtn"/>
+		<Button text="ADD" tap="addButton" stretch="fill" class="addBtn"/>
 		
 	</StackLayout>
 </Page>

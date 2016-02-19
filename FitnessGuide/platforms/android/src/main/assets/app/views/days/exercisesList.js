@@ -37,7 +37,7 @@ exports.goToAddPage = function(args){
      
      var navigationEntry = {
      	moduleName: "./views/days/add",
-     	context: {addText: day},//tova day e za add-page zashto shte ni trqbva za klas name za DB
+     	context: {className: day},//tova day e za add-page zashto shte ni trqbva za klas name za DB
      	animated: true
      };
 
