@@ -1,27 +1,33 @@
 var observableModule = require("data/observable");
 var source = new observableModule.Observable();
 
-var list;
+
+var observableArrayModule = require("data/observable-array");
+
+
+var listt; 
+
+
 var day;
 
 function onNavigatedTo(args){
 
 	var page = args.object;
 	page.bindingContext = page.navigationContext;
-	list = page.navigationContext.items;
+     listt =  page.navigationContext.items; 
 	day = page.navigationContext.listTitle;
 }
 
 
 exports.onItemTapped = function(args){
-//console.log(args.index);
+
 
      var navigationEntry = {
      	moduleName: "./views/days/details",
-     	context: {TEXT: list[args.index].firstName +" "+ list[args.index].lastName,
-                  TEXT2: list[args.index].lastName,
+     	context: {mainMuscle: listt[args.index].mainMuscle +" "+ listt[args.index].subMuscle,
+                  subMuscle: listt[args.index].subMuscle,
                   Title:"Details",
-                  imgSource:list[args.index].pics},
+                  pics:listt[args.index].pics},
      	animated: true
      };
 

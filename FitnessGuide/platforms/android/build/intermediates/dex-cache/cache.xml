@@ -16,6 +16,20 @@
         <dex dex="C:\Android NSProjects\4\FitnessGuide\FitnessGuide\platforms\android\build\intermediates\pre-dexed\debug\nativescript-36c0f86eeac1c181ac31395302c35889fa245248.jar" />
     </item>
     <item
+        jar="C:\Android NSProjects\5\FitnessGuide\FitnessGuide\platforms\android\libs\widgets.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ff3c62a8eb22f0111b882125ad1579dc6273fd90">
+        <dex dex="C:\Android NSProjects\5\FitnessGuide\FitnessGuide\platforms\android\build\intermediates\pre-dexed\debug\widgets-de74ff2f98a305c1970233e71b4a4aa527d23b26.jar" />
+    </item>
+    <item
+        jar="C:\Android NSProjects\5\FitnessGuide\FitnessGuide\platforms\android\libs\nativescript.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e49ee2301dce2f85edd44f634fd45ad92df9e00a">
+        <dex dex="C:\Android NSProjects\5\FitnessGuide\FitnessGuide\platforms\android\build\intermediates\pre-dexed\debug\nativescript-727a004a25b6b5318f0280f261f33cf730a8965f.jar" />
+    </item>
+    <item
         jar="C:\Android NSProjects\4\FitnessGuide\FitnessGuide\platforms\android\libs\widgets.jar"
         jumboMode="false"
         revision="23.0.1"

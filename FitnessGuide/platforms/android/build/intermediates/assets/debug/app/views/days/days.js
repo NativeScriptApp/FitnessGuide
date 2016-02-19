@@ -3,16 +3,17 @@ var pagesModule = require("ui/page");
 var view = require("ui/core/view");
 var pageNavigator = require("~/common/page-navigator");
 var frameModule = require("ui/frame");
+var data = require("~/common/data");
 
-var list = [ // tuka trqbva da idva  currrent day list (mondayList....)
-{firstName:"John", lastName:"Doe", pics:"~/images/Abs/rotateAbs.jpg"},
-{firstName:"Pesho", lastName:"Poe", pics:"~/images/Abs/rotateAbs.jpg"},
-{firstName:"Misho", lastName:"Moe", pics:"~/images/Abs/rotateAbs.jpg"},
-{firstName:"Bibo", lastName:"Boe", pics:"~/images/Abs/rotateAbs.jpg"},
-{firstName:"Bibo", lastName:"Boe", pics:"~/images/Abs/rotateAbs.jpg"},
-{firstName:"Bibo", lastName:"Boe", pics:"~/images/Abs/downPartAbs.png"},
-{firstName:"Bibo", lastName:"Boe", pics:"~/images/Abs/downPartAbs.png"},
-{firstName:"Bibo", lastName:"Boe", pics:"~/images/Abs/rotateAbs.jpg"}
+var list2 = [ // tuka trqbva da idva  currrent day list (mondayList....)
+{mainMuscle:"John", subMuscle:"Doe", pics:"~/images/Abs/rotateAbs.jpg"},
+{mainMuscle:"Pesho", subMuscle:"Poe", pics:"~/images/Abs/rotateAbs.jpg"},
+{mainMuscle:"Misho", subMuscle:"Moe", pics:"~/images/Abs/rotateAbs.jpg"},
+{mainMuscle:"Bibo", subMuscle:"Boe", pics:"~/images/Abs/rotateAbs.jpg"},
+{mainMuscle:"Bibo", subMuscle:"Boe", pics:"~/images/Abs/rotateAbs.jpg"},
+{mainMuscle:"Bibo", subMuscle:"Boe", pics:"~/images/Abs/downPartAbs.jpg"},
+{mainMuscle:"Bibo", subMuscle:"Boe", pics:"~/images/Abs/downPartAbs.jpg"},
+{mainMuscle:"Bibo", subMuscle:"Boe", pics:"~/images/Abs/rotateAbs.jpg"}
 ];
 
 var pageModules = (function() {
@@ -33,13 +34,45 @@ var pageModules = (function() {
 })();
 
 exports.onBtnTapped = function(args){
-	console.log(args.object.text)
+	var day = args.object.text;
+	var currrentDay = (args.object.text) + "Exercise";
+
+    console.log(currrentDay);
+
+
+	data.get(currrentDay);
+
+	if(day == "Monday"){
+
+    	list = global.mondayExercises;
+	}
+	else if(day == "Tuesday"){
+    	list = global.tuesdayExercises;
+	}
+	else if(day == "Wednesday"){
+    	list = global.wednesdayExercises;
+	}
+	else if(day == "Thursday"){
+    	list = global.thursdayExercises;
+	}
+	else if(day == "Friday"){
+    	list = global.fridayExercises;
+	}
+	else if(day == "Saturday"){
+    	list = global.saturdayExercises;
+	}
+	else if(day == "Sunday"){
+    	list = global.sundayExercises;
+	}
+
+	 
+
 
 	var navigationEntry = {
 		moduleName: "./views/days/exercisesList",
 		context: {exText: "hfhghjgjhfjhfhgfhjgfjhfhjs",
 		listTitle: args.object.text,
-		items: list},
+		items: list2},
 		animated: true
 	};
 

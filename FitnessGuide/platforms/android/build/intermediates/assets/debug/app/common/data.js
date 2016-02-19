@@ -1,67 +1,130 @@
 var Parse = require("~/parse").Parse;
-Parse.initialize("laM2O42kKHRui4IdqXubuTPVIAyGXja96ifAqjBe", "X3UZ7w7dlTOCsF3gxw1hmDKHOhnwSkcgih3BtkZr");
-console.log(Parse.applicationId);
+Parse.initialize("yyiYli6L5Kpr4DxaNdzBxX8sw4PzS28PMIOuaywU", "jtXjRMjijevWLMSciiaHB2pnloFpUSC9AHtjE5Q7");
 localStorage = require("localStorage");
 console.log(localStorage);
+
+var imageSourceModule = require("image-source");
+var fileSystemModule = require("file-system");
+var directory = "/../images/";
 // XMLHttpRequest = require("xmlhttprequest");
 // console.log(XMLHttpRequest);
+
+
+
 var parseQuery = (function(){
 	
-	var parseQuery = {
-		get:function(){	
-			var places = Parse.Object.extend("Place");
-			var query = new Parse.Query(places);
-			query.find({
-			  success: function(results) {
-			    console.log("Successfully retrieved " + results.length + " scores.");			    
-			    for (var i = 0; i < results.length; i++) {
-			      var object = results[i];
-			      console.log(object.id + ' - ' + object.get('placeName'));
-			    }
-			  },
-			  error: function(error) {
-			    console.log("Error: " + error.code + " " + error.message);
-			  }
-			});
-		},
-		post:function(){
-		var GameScore = Parse.Object.extend("GameScore");
-			var gameScore = new GameScore();
 
-			gameScore.set("score", 1337);
-			gameScore.set("playerName", "Sean Plott");
-			gameScore.set("cheatMode", false);
+      // function za sazdavane na patq do snimkata
+      function imageFromSource(imageName) {
+      	return imageSourceModule.fromFile(fileSystemModule.path.join(__dirname, directory + imageName + ".jpg"));
+      };
 
-			gameScore.save(null, {
-			  success: function(gameScore) {
-			    console.log('New object created with objectId: ' + gameScore.id);
-			  },
-			  error: function(gameScore, error) {
-			    alert('Failed to create new object, with error code: ' + error.message);
-			  }
-			});
+      var parseQuery = {
+      	get:function(className){	
 
-			var query = new Parse.Query(GameScore);
+      		var GameScore = Parse.Object.extend(className);
+      		var query = new Parse.Query(GameScore);
+      		query.find({
+      			success: function(gameScore) {
+
+      				for (var i = 0; i < gameScore.length; i++) {
+      					if(className == "Exercise"){
+      						global.exercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
+      													  subMuscle: gameScore[i].get("subMuscle"),
+      														  pics : imageFromSource(gameScore[i].get("image"))});
+
+      					}
+
+      					else if(className == "MondayExercise"){
+  							global.mondayExercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
+      													  subMuscle: gameScore[i].get("subMuscle"),
+      														  pics : imageFromSource(gameScore[i].get("image"))});
+
+      					}
+      					else if(className == "TuesdayExercise"){
+  							global.tuesdayExercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
+      													  subMuscle: gameScore[i].get("subMuscle"),
+      														  pics : imageFromSource(gameScore[i].get("image"))});
+
+      					}
+      					else if(className == "WednesdayExercise"){
+  							global.wednesdayExercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
+      													  subMuscle: gameScore[i].get("subMuscle"),
+      														  pics : imageFromSource(gameScore[i].get("image"))});
+
+      					}
+      					else if(className == "ThursdayExercise"){
+  							global.thursdayExercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
+      													  subMuscle: gameScore[i].get("subMuscle"),
+      														  pics : imageFromSource(gameScore[i].get("image"))});
+
+      					}
+      					else if(className == "FridayExercise"){
+  							global.fridayExercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
+      													  subMuscle: gameScore[i].get("subMuscle"),
+      														  pics : imageFromSource(gameScore[i].get("image"))});
+
+      					}
+      					else if(className == "SaturdayExercise"){
+  							global.saturdayExercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
+      													  subMuscle: gameScore[i].get("subMuscle"),
+      														  pics : imageFromSource(gameScore[i].get("image"))});
+
+      					}
+      					else if(className == "SundayExercise"){
+  							global.sundayExercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
+      													  subMuscle: gameScore[i].get("subMuscle"),
+      														  pics : imageFromSource(gameScore[i].get("image"))});
+
+      					}
+
+      					console.log(gameScore[i].get("mainMuscle"));
+      				}
+      			},
+      			error: function(object, error) {
+
+      			}
+      		});
+      	},
+   				//post ne raboti zasega!
+   				post:function(){
+   					var GameScore = Parse.Object.extend("GameScore");
+   					var gameScore = new GameScore();
+
+   					gameScore.set("score", 1337);
+   					gameScore.set("playerName", "Sean Plott");
+   					gameScore.set("cheatMode", false);
+
+   					gameScore.save(null, {
+   						success: function(gameScore) {
+   							console.log('New object created with objectId: ' + gameScore.id);
+   						},
+   						error: function(gameScore, error) {
+   							alert('Failed to create new object, with error code: ' + error.message);
+   						}
+   					});
+
+   					var query = new Parse.Query(GameScore);
 			//query.equalTo("playerName", "Dan Stemkoski");
 			query.find({
-			  success: function(results) {
-			    console.log("Successfully retrieved " + results.length + " scores.");
+				success: function(results) {
+					console.log("Successfully retrieved " + results.length + " scores.");
 			    // Do something with the returned Parse.Object values
 			    for (var i = 0; i < results.length; i++) {
-			      var object = results[i];
-			      console.log(object.id + ' - ' + object.get('playerName'));
+			    	var object = results[i];
+			    	console.log(object.id + ' - ' + object.get('playerName'));
 			    }
-			  },
-			  error: function(error) {
-			    alert("Error: " + error.code + " " + error.message);
-			  }
-			});
+			},
+			error: function(error) {
+				alert("Error: " + error.code + " " + error.message);
+			}
+		});
 
 		}
 	};
 
 	return parseQuery;
 })();
-	
+
 exports.get = parseQuery.get;
 exports.post = parseQuery.post;

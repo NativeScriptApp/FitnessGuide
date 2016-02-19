@@ -1,6 +1,6 @@
 var observableModule = require("data/observable");
 var source = new observableModule.Observable();
-
+var data = require("~/common/data");
 
 var observableArrayModule = require("data/observable-array");
 
@@ -13,35 +13,25 @@ var day;
 function onNavigatedTo(args){
 
 	var page = args.object;
+
 	page.bindingContext = page.navigationContext;
-    listt =  page.navigationContext.items; 
+    listt =  page.navigationContext.items;
 	day = page.navigationContext.listTitle;
 }
 
 
 exports.onItemTapped = function(args){
 
-console.log(listt[args.index]);
-console.log(global.mondayExercises[args.index]);
+     var navigationEntry = {
+     	moduleName: "./views/days/details",
+     	context: {mainMuscle: listt.getItem(args.index).mainMuscle +" "+ listt.getItem(args.index).subMuscle,
+                  subMuscle: listt.getItem(args.index).subMuscle,
+                  Title:"Details",
+                  pics:listt.getItem(args.index).pics},
+     	animated: true
+     };
 
-//console.log(listt[args.index].mainMuscle);
-console.log(listt[args.index].get("mainMuscle"));
-console.log(global.mondayExercises[args.index].mainMuscle);
-console.log(global.mondayExercises[args.index].get("mainMuscle"));
-
-
-
-
-     // var navigationEntry = {
-     // 	moduleName: "./views/days/details",
-     // 	context: {mainMuscle: listt[args.index].mainMuscle +" "+ listt[args.index].subMuscle,
-     //              subMuscle: listt[args.index].subMuscle,
-     //              Title:"Details",
-     //              pics:listt[args.index].pics},
-     // 	animated: true
-     // };
-
-     // topmost.navigate(navigationEntry);
+     topmost.navigate(navigationEntry);
 };
 exports.goToAddPage = function(args){
      
