@@ -6,8 +6,10 @@
 			<ListView.itemTemplate>
 			   <StackLayout  orientation="horizontal">
 				<Image src="{{ pics }}" stretch ="none" />
-				<Label text="{{ firstName }}" />
-				<Label text="{{ lastName }}" />
+                 <StackLayout orientation="vertical">
+                 	<Label text="{{ mainMuscle }}" />
+					<Label text="{{ subMuscle }}" />
+                 </StackLayout>
                </StackLayout>
 			</ListView.itemTemplate>
 		</ListView>
