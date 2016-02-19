@@ -86,6 +86,30 @@ var parseQuery = (function(){
       			}
       		});
       	},
+
+         getAll:function(className){   
+
+            var table = Parse.Object.extend(className);
+            var query = new Parse.Query(table);
+
+            query.find({
+               success: function(result) {
+                  global.dbData.length = 0;
+               //global.dbData = result.slice(0);
+                  for (var i = 0; i < result.length; i++) {
+                     global.dbData.push(
+                        {
+                           firstFood: result[i].get("firstFood"),
+                           secondFood: result[i].get("secondFood"),
+                           picture: imageFromSource(result[i].get("picture"))
+                        });
+                  }
+               },
+               error: function(error) {
+                  console.log("Error: " + error.code + " " + error.message);
+               }
+            });
+         },
    				//post ne raboti zasega!
    				post:function(){
    					var GameScore = Parse.Object.extend("GameScore");
@@ -128,3 +152,4 @@ var parseQuery = (function(){
 
 exports.get = parseQuery.get;
 exports.post = parseQuery.post;
+exports.getAll = parseQuery.getAll;

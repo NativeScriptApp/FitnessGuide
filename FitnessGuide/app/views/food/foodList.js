@@ -1,13 +1,11 @@
 var observableModule = require("data/observable");
 var source = new observableModule.Observable();
+var observableArrayModule = require("data/observable-array");
 
-var list;
 function onNavigatedTo(args){
 
-	var page = args.object;
-
-	page.bindingContext = page.navigationContext;
-	list = page.navigationContext.items;
+  var page = args.object;
+  page.bindingContext = page.navigationContext;
 }
 
 

@@ -5,18 +5,20 @@ var pageNavigator = (function() {
 
     var pageNavigator = {
 
-        navigateTo: function(toPage) {
+        navigateTo: function(toPage,context) {
             console.log(toPage);
             var navigateToPage = {
-                moduleName: toPage,                
+                moduleName: toPage,
+                context: context,                
                 animated: true
             };
 
             var topmost = frameModule.topmost();
             topmost.navigate(navigateToPage);
         },
+
         attachNavigation:function(segmentedBar){
-			segmentedBar.on('propertyChange', function(){
+            segmentedBar.on('propertyChange', function(){
             if (segmentedBar.selectedIndex === 0){
                 pageNavigator.navigateTo("./views/main/main-page");
             }else if (segmentedBar.selectedIndex === 1){
@@ -28,9 +30,10 @@ var pageNavigator = (function() {
             }else if (segmentedBar.selectedIndex === 4){
                 pageNavigator.navigateTo("./views/location/location");
             }
-        });
+            });
         }        
     }
+    
     return pageNavigator;
 })();
 

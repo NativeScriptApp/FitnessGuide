@@ -7,15 +7,14 @@
 
 	<Label text="{{ exText }}" textWrap="true" />
     
-  <ListView items="{{ items }}" itemTap="onItemTapped" >
+  <ListView items="{{ items }}" itemTap="onItemTapped" id="foodList">
             <ListView.itemTemplate>
-              <GridLayout rows="*, *" columns="*, *">
-                <Image src="{{ picture }}" stretch ="none" rowSpan="2" col="0"/>
-                <Label text="{{ firstFood }}" row="0" col="1" />                
+              <GridLayout rows="50, 50" columns="100, *">
+                <Image src="{{ picture }}" stretch ="none" rowspan="2" col="0"/>
+                <Label text="{{ firstFood }}" row="0" col="1"/>
                 <Label text="{{ secondFood }}" row="1" col="1" />
               </GridLayout>
             </ListView.itemTemplate>
-    </ListView>
-
+    </ListView> 
     
 </Page>
