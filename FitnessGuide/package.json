@@ -6,6 +6,7 @@
     }
   },
   "dependencies": {
+    "nativescript-geolocation": "0.0.8",
     "node-parse-api": "^0.3.8",
     "parse": "^1.7.0",
     "tns-core-modules": "1.5.2"

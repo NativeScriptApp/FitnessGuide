@@ -2,39 +2,25 @@
 <items version="2" >
 
     <item
-        jar="G:\android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jar="C:\Users\Ric\Documents\GitHub\FitnessGuide\FitnessGuide\platforms\android\libs\widgets.jar"
         jumboMode="false"
-        revision="23.0.1"
+        revision="23.0.2"
+        sha1="ff3c62a8eb22f0111b882125ad1579dc6273fd90">
+        <dex dex="C:\Users\Ric\Documents\GitHub\FitnessGuide\FitnessGuide\platforms\android\build\intermediates\pre-dexed\nativescript-geolocation\debug\widgets-a964627cc4bd44bc1d51e8b6f679ecdd8b0b8956.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ric\Documents\GitHub\FitnessGuide\FitnessGuide\platforms\android\libs\nativescript.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e49ee2301dce2f85edd44f634fd45ad92df9e00a">
+        <dex dex="C:\Users\Ric\Documents\GitHub\FitnessGuide\FitnessGuide\platforms\android\build\intermediates\pre-dexed\nativescript-geolocation\debug\nativescript-22d591188671bb6668402b4c73c5e81f10103f7c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Ric\AppData\Local\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
         sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="C:\Android NSProjects\4\FitnessGuide\FitnessGuide\platforms\android\build\intermediates\pre-dexed\debug\support-annotations-23.1.1-444f0a7f86104d3d8f9a81bd038ee5d27a603a4a.jar" />
-    </item>
-    <item
-        jar="C:\Android NSProjects\4\FitnessGuide\FitnessGuide\platforms\android\libs\nativescript.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="e49ee2301dce2f85edd44f634fd45ad92df9e00a">
-        <dex dex="C:\Android NSProjects\4\FitnessGuide\FitnessGuide\platforms\android\build\intermediates\pre-dexed\debug\nativescript-36c0f86eeac1c181ac31395302c35889fa245248.jar" />
-    </item>
-    <item
-        jar="C:\Android NSProjects\5\FitnessGuide\FitnessGuide\platforms\android\libs\widgets.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="ff3c62a8eb22f0111b882125ad1579dc6273fd90">
-        <dex dex="C:\Android NSProjects\5\FitnessGuide\FitnessGuide\platforms\android\build\intermediates\pre-dexed\debug\widgets-de74ff2f98a305c1970233e71b4a4aa527d23b26.jar" />
-    </item>
-    <item
-        jar="C:\Android NSProjects\5\FitnessGuide\FitnessGuide\platforms\android\libs\nativescript.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="e49ee2301dce2f85edd44f634fd45ad92df9e00a">
-        <dex dex="C:\Android NSProjects\5\FitnessGuide\FitnessGuide\platforms\android\build\intermediates\pre-dexed\debug\nativescript-727a004a25b6b5318f0280f261f33cf730a8965f.jar" />
-    </item>
-    <item
-        jar="C:\Android NSProjects\4\FitnessGuide\FitnessGuide\platforms\android\libs\widgets.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="ff3c62a8eb22f0111b882125ad1579dc6273fd90">
-        <dex dex="C:\Android NSProjects\4\FitnessGuide\FitnessGuide\platforms\android\build\intermediates\pre-dexed\debug\widgets-73487bb0078c65024f4e325106b94ca0090ae4cc.jar" />
+        <dex dex="C:\Users\Ric\Documents\GitHub\FitnessGuide\FitnessGuide\platforms\android\build\intermediates\pre-dexed\nativescript-geolocation\debug\support-annotations-23.1.1-afaa2aa79d31e6f6128de66c2dc95814f92c29fd.jar" />
     </item>
 
 </items>

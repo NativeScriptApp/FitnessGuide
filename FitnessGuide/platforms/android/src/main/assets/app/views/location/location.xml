@@ -1,7 +1,13 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <GridLayout >
-      <GridLayout  verticalAlignment="bottom">
-        
+  <GridLayout rows="*, auto">
+    <GridLayout row="0">
+      <StackLayout orientation="horizontal" verticalAlignment="top">
+          <Button text="Enable Location" tap="enableLocationTap" />
+          <Button text="Get Location" tap="getLocationTap" />
+        </StackLayout>
+
+        </GridLayout>
+      <GridLayout row="1" verticalAlignment="bottom">
         <SegmentedBar id="segments" class="FontAwesome">
           <SegmentedBar.items>
             <SegmentedBarItem title="&#xf015;"/>
