@@ -5,6 +5,8 @@
 		<StackLayout orientation="vertical">
 			<Label text="{{mainMuscle}}" textWrap="true" class="details" />
 		    <Label text="{{subMuscle}}" textWrap="true" class="details" />
+		    <Label text="{{explanation}}" textWrap="true" />
+		    
 		</StackLayout>
 		
 	</StackLayout>

@@ -26,6 +26,7 @@ exports.onItemTapped = function(args){
      	moduleName: "./views/days/details",
      	context: {mainMuscle: listt.getItem(args.index).mainMuscle +" "+ listt.getItem(args.index).subMuscle,
                   subMuscle: listt.getItem(args.index).subMuscle,
+                  explanation: listt.getItem(args.index).explanation,
                   Title:"Details",
                   pics:listt.getItem(args.index).pics},
      	animated: true

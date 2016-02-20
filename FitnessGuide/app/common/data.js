@@ -28,50 +28,58 @@ var parseQuery = (function(){
                         
       						global.exercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
       													  subMuscle: gameScore[i].get("subMuscle"),
-      														  pics : imageFromSource(gameScore[i].get("image"))});
+      														  pics : imageFromSource(gameScore[i].get("image")),
+                                                  explanation: gameScore[i].get("explanation")});
 
       					}
 
       					else if(className == "MondayExercise"){
   							global.mondayExercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
       													  subMuscle: gameScore[i].get("subMuscle"),
-      														  pics : imageFromSource(gameScore[i].get("image"))});
+      														  pics : imageFromSource(gameScore[i].get("image")),
+                                                explanation: gameScore[i].get("explanation")});
 
       					}
       					else if(className == "TuesdayExercise"){
   							global.tuesdayExercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
       													  subMuscle: gameScore[i].get("subMuscle"),
-      														  pics : imageFromSource(gameScore[i].get("image"))});
+      														  pics : imageFromSource(gameScore[i].get("image")),
+                                                explanation: gameScore[i].get("explanation")});
 
       					}
       					else if(className == "WednesdayExercise"){
   							global.wednesdayExercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
       													  subMuscle: gameScore[i].get("subMuscle"),
-      														  pics : imageFromSource(gameScore[i].get("image"))});
+      														  pics : imageFromSource(gameScore[i].get("image")),
+                                                explanation: gameScore[i].get("explanation")});
 
       					}
       					else if(className == "ThursdayExercise"){
   							global.thursdayExercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
       													  subMuscle: gameScore[i].get("subMuscle"),
-      														  pics : imageFromSource(gameScore[i].get("image"))});
+      														  pics : imageFromSource(gameScore[i].get("image")),
+                                                explanation: gameScore[i].get("explanation")});
 
       					}
       					else if(className == "FridayExercise"){
   							global.fridayExercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
       													  subMuscle: gameScore[i].get("subMuscle"),
-      														  pics : imageFromSource(gameScore[i].get("image"))});
+      														  pics : imageFromSource(gameScore[i].get("image")),
+                                                explanation: gameScore[i].get("explanation")});
 
       					}
       					else if(className == "SaturdayExercise"){
   							global.saturdayExercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
       													  subMuscle: gameScore[i].get("subMuscle"),
-      														  pics : imageFromSource(gameScore[i].get("image"))});
+      														  pics : imageFromSource(gameScore[i].get("image")),
+                                                explanation: gameScore[i].get("explanation")});
 
       					}
       					else if(className == "SundayExercise"){
   							global.sundayExercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
       													  subMuscle: gameScore[i].get("subMuscle"),
-      														  pics : imageFromSource(gameScore[i].get("image"))});
+      														  pics : imageFromSource(gameScore[i].get("image")),
+                                                explanation: gameScore[i].get("explanation")});
 
       					}
 

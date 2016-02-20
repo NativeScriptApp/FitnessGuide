@@ -2,8 +2,8 @@
 //var actionBarModule = require("ui/action-bar");
 //var frameModule = require("ui/frame");
 //var pagesModule = require("ui/page");
- var pushPlugin = require("nativescript-push-notifications");
- var self = this;
+ // var pushPlugin = require("nativescript-push-notifications");
+ // var self = this;
 
 
 
@@ -22,14 +22,14 @@ var pageModules = (function() {
             pageNavigator.attachNavigation(segmentedBar);
 
 
-           //notifications
-            pushPlugin.register({ senderID: 'yyiYli6L5Kpr4DxaNdzBxX8sw4PzS28PMIOuaywU' }, function (data){
-            	self.set("message", "" + JSON.stringify(data));
-            }, function() { });
+           // //notifications
+           //  pushPlugin.register({ senderID: '3LbP5dTwALBb0xjlMlqXQ52VIUVHLZxNQGXfNvVS' }, function (data){
+           //  	self.set("message", "" + JSON.stringify(data));
+           //  }, function() { });
 
-            pushPlugin.onMessageReceived(function callback(data) {	
-            	self.set("message", "" + JSON.stringify(data));
-            });
+           //  pushPlugin.onMessageReceived(function callback(data) {	
+           //  	self.set("message", "" + JSON.stringify(data));
+           //  });
 
         }
     }
