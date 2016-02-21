@@ -2,8 +2,8 @@
 //var actionBarModule = require("ui/action-bar");
 //var frameModule = require("ui/frame");
 //var pagesModule = require("ui/page");
- // var pushPlugin = require("nativescript-push-notifications");
- // var self = this;
+// var pushPlugin = require("nativescript-push-notifications");
+// var self = this;
 
 
 

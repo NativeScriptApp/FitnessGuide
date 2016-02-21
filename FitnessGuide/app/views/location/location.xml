@@ -1,9 +1,15 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
   <GridLayout rows="*, auto">
     <GridLayout row="0">
-      <StackLayout orientation="horizontal" verticalAlignment="top">
+      <StackLayout orientation="vertical" verticalAlignment="top">
           <Button text="Enable Location" tap="enableLocationTap" />
           <Button text="Get Location" tap="getLocationTap" />
+          <ListView  items="{{ locations }}">
+      <ListView.itemTemplate>
+        <Label text="{{ $value, latitude + ', ' + longitude + ', ' + altitude }}" />
+      </ListView.itemTemplate>
+    </ListView>
+          <Button text="Show on map" tap="showOnMap"/>
         </StackLayout>
 
         </GridLayout>
