@@ -4,11 +4,6 @@
       <StackLayout orientation="vertical" verticalAlignment="top">
           <Button text="Enable Location" tap="enableLocationTap" />
           <Button text="Get Location" tap="getLocationTap" />
-          <ListView  items="{{ locations }}">
-      <ListView.itemTemplate>
-        <Label text="{{ $value, latitude + ', ' + longitude + ', ' + altitude }}" />
-      </ListView.itemTemplate>
-    </ListView>
           <Button text="Show on map" tap="showOnMap"/>
         </StackLayout>
 

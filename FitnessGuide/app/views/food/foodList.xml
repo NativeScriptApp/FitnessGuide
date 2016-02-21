@@ -9,9 +9,9 @@
     
   <ListView items="{{ items }}" itemTap="onItemTapped" id="foodList">
             <ListView.itemTemplate>
-              <GridLayout rows="50, 50" columns="100, *">
-                <Image src="{{ picture }}" stretch ="none" rowspan="2" col="0"/>
-                <Label text="{{ firstFood }}" row="0" col="1"/>
+              <GridLayout rows="*, *" columns="*, *">
+                <Image src="{{ picture }}" stretch ="fill" class="pics" rowspan="2" col="0"/>
+                <Label text="{{ firstFood }}" row="0" col="1" class="myLabel"/>
                 <Label text="{{ secondFood }}" row="1" col="1" />
               </GridLayout>
             </ListView.itemTemplate>

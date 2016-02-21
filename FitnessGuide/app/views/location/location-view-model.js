@@ -33,8 +33,6 @@ function enableLocationTap(args) {
     var isEnabled = geolocation.isEnabled();
     if (!isEnabled) {
         geolocation.enableLocationRequest();
-    }else{
-        console.log("not enabled");
     }
 }
 

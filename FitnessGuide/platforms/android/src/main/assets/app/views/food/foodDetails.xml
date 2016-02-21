@@ -1,14 +1,14 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" navigatedTo="onNavigatedTo">
-	<ActionBar title="{{title}}">
-  		
+	<ActionBar title="{{title}}">  		
 	</ActionBar>
 
 	<StackLayout>
-		<Image src="{{picture}}" stretch ="fill" class="detailImage"/>
+		<Image src="{{picture}}" stretch ="fill" class="detailImage" id="img"/>
 		<StackLayout orientation="vertical">
-			<Label text="{{products}}" textWrap="true" class="details" />
-		    <Label text="Description:" textWrap="true" class="details" />
-		    <Label text="{{explanation}}" textWrap="true" class="details" />
+			<Label text="Products" textWrap="true" class="myLabel" />
+			<Label text="{{products}}" textWrap="true" />
+		    <Label text="Description:" textWrap="true" class="myLabel"  />
+		    <Label text="{{explanation}}" textWrap="true" editable="false" class="explanation" id = "explanation" />
 		</StackLayout>
 		
 	</StackLayout>
