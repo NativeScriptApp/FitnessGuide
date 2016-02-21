@@ -6,6 +6,18 @@ function onNavigatedTo(args){
 	var page = args.object;
 	page.bindingContext = page.navigationContext;
 
+	myImage = page.getViewById("myImage");
+
+	myImage.animate({
+				duration: 2000,
+				rotate: 360,
+				scale: {
+					x: 3.5,
+					y: 3.0
+				}
+			});
+
+
 	var label = page.getViewById("explanation");
 	label.fontSize = 14;
     label.animate({opacity:0,

@@ -1,11 +1,14 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" navigatedTo="onNavigatedTo">
 	<ActionBar title="{{Title}}"/>
-	<StackLayout>
-		<Image src="{{pics}}" stretch ="fill" class="detailImage"/>
-		<StackLayout orientation="vertical">
-			<Label text="{{mainMuscle}}" textWrap="true" class="details" />
-		    <Label text="{{subMuscle}}" textWrap="true" class="details" />
-		    <Label text="{{explanation}}" textWrap="true" id="explanation" />		    
-		</StackLayout>		
-	</StackLayout>
+	<!-- <StackLayout> -->
+		<GridLayout rows="300,*">
+			<Image src="{{pics}}" stretch ="fill" class="detailImage" id="myImage" row="0"/>
+			<StackLayout orientation="vertical" row="1" >
+				<Label text="{{mainMuscle}}" textWrap="true" class="details"  />
+				<Label text="{{subMuscle}}" textWrap="true" class="details" />
+				<Label text="{{explanation}}" textWrap="true" id="explanation" />		    
+			</StackLayout>	
+		</GridLayout>
+
+<!-- 	</StackLayout> -->
 </Page>
