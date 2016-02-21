@@ -81,7 +81,11 @@ var parseQuery = (function(){
       														  pics : imageFromSource(gameScore[i].get("image")),
                                                 explanation: gameScore[i].get("explanation")});
 
-      					}
+      					} 
+                     
+                     else if (className == "Gallery") {
+                        global.photos.push({itemImage:gameScore[i].get("itemImage")});
+                     }
 
       					console.log(gameScore[i].get("mainMuscle"));
       				}
@@ -135,7 +139,22 @@ var parseQuery = (function(){
    							alert('Error: exercise not added: ' + error.message);
    						}
    					});
-		}
+		},
+      postGallery:function(className,itemImage){
+                  var Exercise = Parse.Object.extend(className);
+                  var exercise = new Exercise();
+
+                  exercise.set("itemImage", itemImage);
+
+                  exercise.save(null, {
+                     success: function(exercise) {
+                        alert('Exercise successfully added ! ');
+                     },
+                     error: function(exercise, error) {
+                        alert('Error: exercise not added: ' + error.message);
+                     }
+                  });
+               }
 	};
 
 	return parseQuery;
@@ -144,3 +163,4 @@ var parseQuery = (function(){
 exports.get = parseQuery.get;
 exports.post = parseQuery.post;
 exports.getAll = parseQuery.getAll;
+exports.postGallery = parseQuery.postGallery;

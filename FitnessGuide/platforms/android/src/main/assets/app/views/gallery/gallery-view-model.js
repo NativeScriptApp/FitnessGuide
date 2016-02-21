@@ -3,6 +3,8 @@ var imageSourceModule = require("image-source");
 var fileSystemModule = require("file-system");
 var observableArrayModule = require("data/observable-array");
 var enums = require("ui/enums");
+var data = require("~/common/data");
+
 
 var cameraModule = require("camera");
 
@@ -16,21 +18,16 @@ function imageFromSource(imageName) {
 
 var item1 = {itemImage: imageFromSource("1.jpg")}; 
 var item2 = {itemImage: imageFromSource("2.png")}; 
-var item3 = {itemImage: imageFromSource("1.jpg")}; 
-var item4 = {itemImage: imageFromSource("2.png")}; 
-var item5 = {itemImage: imageFromSource("1.jpg")}; 
-var item6 = {itemImage: imageFromSource("2.png")}; 
 
-localImagesArray.push([item1, item2, item3, item4, item5, item6]);
 
-var item7 = {itemImage: imageFromSource("01.jpg")}; 
-var item8 = {itemImage: imageFromSource("01jpg")};
+global.photos.push([item1, item2]);
+
 
 var photoAlbumModel = new observable.Observable();
 
 Object.defineProperty(photoAlbumModel, "photoItems", {
     get: function () {
-        return localImagesArray;
+        return global.photos;
     },
     enumerable: true,
     configurable: true
@@ -45,7 +42,8 @@ photoAlbumModel.tapAction = function () {
     var item = {
         itemImage: picture
     };
-    localImagesArray.push(item);
+    data.postGallery("Gallery",picture);
+    global.photos.push(item);
 });
 
 };
