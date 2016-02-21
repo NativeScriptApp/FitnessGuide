@@ -1,19 +1,20 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded" unloaded="onPageClosed" navigatedTo="onNavigatedTo">
 	<ActionBar title="ADD"/>
-	<StackLayout>
-		<Label text="All exercises" textWrap="true"  height="50"/>
-		<ListView items="items" id="listViewId"  itemTap="onItemTapped"  height="400">
-			<ListView.itemTemplate>
-			   <StackLayout  orientation="horizontal">
-				<Image src="{{ pics }}" stretch ="none" />
-                 <StackLayout orientation="vertical">
-                 	<Label text="{{ mainMuscle }}" />
+	<GridLayout class="pageBackground">
+	    <StackLayout >
+		<Label text="All exercises" textWrap="true"  height="50" class="myLabel" style="horizontal-align: center"/>
+		<ListView items="items" id="listViewId"  itemTap="onItemTapped"  height="400" >
+			<ListView.itemTemplate  >
+			   <StackLayout  orientation="horizontal"  class="listBackground">
+				<Image src="{{ pics }}" stretch ="fill" class="pics"/>
+                 <StackLayout orientation="vertical" >
+                 	<Label text="{{ mainMuscle }}" class="myLabel" />
 					<Label text="{{ subMuscle }}" />
                  </StackLayout>
                </StackLayout>
 			</ListView.itemTemplate>
 		</ListView>
 		<Button text="ADD" tap="addButton" stretch="fill" class="addBtn"/>
-		
 	</StackLayout>
+	</GridLayout>
 </Page>

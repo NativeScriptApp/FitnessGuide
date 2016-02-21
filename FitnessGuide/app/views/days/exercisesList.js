@@ -14,9 +14,9 @@ function onNavigatedTo(args){
 
 	var page = args.object;
 
-	page.bindingContext = page.navigationContext;
+	  page.bindingContext = page.navigationContext;
     listt =  page.navigationContext.items;
-	day = page.navigationContext.listTitle;
+	  day = page.navigationContext.listTitle;
 }
 
 

@@ -1,22 +1,19 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" navigatedTo="onNavigatedTo">
 	<ActionBar title="{{listTitle}}">
 		<ActionBar.actionItems>
-		<ActionItem  android.systemIcon="ic_menu_add" ios.position="right" tap="goToAddPage"/>
+			<ActionItem  android.systemIcon="ic_menu_add" ios.position="right" tap="goToAddPage"/>
 		</ActionBar.actionItems>
 	</ActionBar>
-
 	<Label text="{{ exText }}" textWrap="true" />
-
-	<ListView items="{{ items }}" itemTap="onItemTapped" >
+	<ListView items="{{ items }}" itemTap="onItemTapped" class="listBackground">
 		<ListView.itemTemplate>
 			<StackLayout  orientation="horizontal">
-
-				<Image src="{{ pics }}" stretch ="none" />
-				<Label text="{{ mainMuscle }}" />
-				<Label text="{{ subMuscle }}" />
+				<Image src="{{ pics }}" stretch ="fill" class="pics"/>
+				<StackLayout orientation="vertical">
+					<Label text="{{ mainMuscle }}" class="myLabel"/>
+					<Label text="{{ subMuscle }}" />
+				</StackLayout>
 			</StackLayout>
 		</ListView.itemTemplate>
 	</ListView>
-
-
 </Page>

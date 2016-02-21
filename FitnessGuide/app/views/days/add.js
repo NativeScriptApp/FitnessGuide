@@ -3,19 +3,18 @@ var imageSourceModule = require("image-source");
 var fileSystemModule = require("file-system");
 var directory = "/../../images/";
 
-
 var data = require("~/common/data");
 var className;
 var mainMuscle;
 var subMuscle;
 var image;
 var explanation;
+
 function onNavigatedTo(args){
 
-	var page = args.object;
-
+	var page = args.object; 
 	var listView = page.getViewById("listViewId");
-
+  
   data.get("Exercise");
   listView.items = global.exercises;
 
@@ -31,6 +30,7 @@ function onPageClosed() {
 
 function onItemTapped(args){
   var index = args.index;
+
 
   mainMuscle = global.exercises.getItem(index).mainMuscle;
   subMuscle = global.exercises.getItem(index).subMuscle;
@@ -96,6 +96,7 @@ function addButton (){
   
   topmost.goBack();
 }
+
 
 exports.onNavigatedTo = onNavigatedTo;
 exports.onPageClosed = onPageClosed;

@@ -1,9 +1,6 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <GridLayout >
-
-      <StackLayout>
-        <Label text="" textWrap="true" height="30"/>
-        
+  <GridLayout class="pageBackground">
+      <StackLayout  >
         <Button text="Monday" tap="onBtnTapped" class="daysBtn"/>
         <Button text="Tuesday" tap="onBtnTapped"  class="daysBtn"/>
         <Button text="Wednesday" tap="onBtnTapped" class="daysBtn" />
