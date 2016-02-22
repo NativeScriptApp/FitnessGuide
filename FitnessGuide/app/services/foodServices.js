@@ -53,15 +53,13 @@ var parseQuery = (function(){
 			post:function(object){
 				var table = Parse.Object.extend("Food1");
 				var food = new table();
-console.log("post");
+         console.log("post");
 
-         var fileData = object["picture"].toBase64String('.jpg', 100);      
-         console.log("data");
+         var fileData = object["picture"]; 
          var filename= "picture.jpg";
-         console.log("name");
          var contentType= "image/jpg";
          var imageFile = new Parse.File(filename, {base64:fileData},contentType);
-      console.log("parsefile");
+            console.log("parsefile");
             food.set("category", object["category"]);
 				food.set("firstFood", object["firstFood"]);
 				food.set("secondFood", object["secondFood"]);
@@ -81,46 +79,28 @@ console.log("post");
 						console.log('Error: Food not added: ' + error.message);
 					}
 				});
-
-console.log("post");
-            // var query = new Parse.Query(table);
-
-            // query.find({
-            //    success: function(result) {
-            //       //global.dbData.length = 0;
-            //    //global.dbData = result.slice(0);
-            //       for (var i = 0; i < result.length; i++) {
-            //          var saved = result[i];
-            //          console.log(saved.get('category')+saved.get('firstFood'))
+		   }
+//          test:function(){   
+// console.log("test");
+//             var table = Parse.Object.extend("Food1");
+//             var query = new Parse.Query(table);
+// console.log(query);
+//             query.find({
+//                success: function(result) {
+//                   console.log(result.length);
+//                   //global.dbData.length = 0;
+//                //global.dbData = result.slice(0);
+//                   for (var i = 0; i < result.length; i++) {
+//                      var saved = result[i];
+//                      console.log(saved.get('picture').url());
                      
-            //       }
-            //    },
-            //    error: function(error) {
-            //       console.log("Error: " + error.code + " " + error.message);
-            //    }
-            // });
-		   },
-         test:function(){   
-console.log("test");
-            var table = Parse.Object.extend("Food1");
-            var query = new Parse.Query(table);
-console.log(query);
-            query.find({
-               success: function(result) {
-                  console.log(result.length);
-                  //global.dbData.length = 0;
-               //global.dbData = result.slice(0);
-                  for (var i = 0; i < result.length; i++) {
-                     var saved = result[i];
-                     console.log(saved.get('picture').url());
-                     
-                  }
-               },
-               error: function(error) {
-                  console.log("Error: " + error.code + " " + error.message);
-               }
-            });
-         }
+//                   }
+//                },
+//                error: function(error) {
+//                   console.log("Error: " + error.code + " " + error.message);
+//                }
+//             });
+//          }
 	};
 
 	return parseQuery;
@@ -128,4 +108,4 @@ console.log(query);
 
 exports.get = parseQuery.get;
 exports.post = parseQuery.post;
-exports.test = parseQuery.test;
+//exports.test = parseQuery.test;

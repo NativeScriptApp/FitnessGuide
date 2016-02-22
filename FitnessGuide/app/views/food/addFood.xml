@@ -1,17 +1,34 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" navigatedTo="onNavigatedTo">
 	<ActionBar title="{{title}}">
-  		<ActionBar.actionItems>
-    		<ActionItem  android.systemIcon="ic_menu_add" ios.position="right"/>
+  		<ActionBar.actionItems>    		
+    		<ActionItem  android.systemIcon="ic_menu_save" ios.position="right" tap="onAddBtnTapped"/>
+    		<ActionItem  android.systemIcon="ic_menu_close_clear_cancel" ios.position="right" tap="onCancelBtnTapped"/>
   		</ActionBar.actionItems>
 	</ActionBar>
 
-	<StackLayout>
-		
-		<Image src="{{picture}}" stretch ="fill" class="detailImage"/>
-		<TextField hint="First food" text="{{  }}" />
-		<TextField hint="Second food" text="{{  }}" />
-		<TextField hint="Third food" text="{{  }}" />
-        <ListPicker items="{{ items }}" selectedIndex="{{ selectedIndex }}" horizontalAlignment="center"/>
+	<StackLayout >
+		<StackLayout orientation="horizontal">			
+			<Image src="{{picture}}" stretch ="fill" class="detailImageFood" id="img"/>
+			<Button text="&#xf030;" tap="onTakePictureBtnTap" class="FontAwesome" width="50" height="50"/>		
+		</StackLayout>
+		<TextField hint="First food" id="first"/>
+		<TextField hint="Second food" id="second"/>
+		<TextField hint="Third food" id="third" />
+		<TextField hint="Explanation" id="explanation" />
+		<StackLayout orientation="horizontal">
+			<GridLayout rows="auto" columns="*,*,*,*">
+			<Label col="0" text="Proteins"/>			
+			<TextField col="0" id="proteins"/>
+			<Label col="1" text="Carbs"/>
+			<TextField col="1" id="carbs"/>
+			<Label col="2" text="Fat" />
+			<TextField col="2" id="fat"/>
+			<Label col="3" text="Calories" />
+			<TextField col="3" id="calories"/>
+			</GridLayout>
+			
+		</StackLayout>		
+        <ListPicker items="{{ items }}" selectedIndex="{{ selectedIndex }}" horizontalAlignment="center" id="categories"/>
             
         
 	</StackLayout>
