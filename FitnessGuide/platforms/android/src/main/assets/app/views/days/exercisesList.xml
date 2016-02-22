@@ -5,12 +5,12 @@
 		</ActionBar.actionItems>
 	</ActionBar>
 	<Label text="{{ exText }}" textWrap="true" />
-	<ListView items="{{ items }}" itemTap="onItemTapped" class="listBackground">
+	<ListView items="{{ items }}" itemTap="onItemTapped" class="listBackground" id="swipe">
 		<ListView.itemTemplate>
 			<StackLayout  orientation="horizontal">
 				<Image src="{{ pics }}" stretch ="fill" class="pics"/>
 				<StackLayout orientation="vertical">
-					<Label text="{{ mainMuscle }}" class="myLabel"/>
+					<Label text="{{ mainMuscle }}" class="myLabel" />
 					<Label text="{{ subMuscle }}" />
 				</StackLayout>
 			</StackLayout>

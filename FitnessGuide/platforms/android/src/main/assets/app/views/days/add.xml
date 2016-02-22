@@ -1,7 +1,7 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded" unloaded="onPageClosed" navigatedTo="onNavigatedTo">
 	<ActionBar title="ADD"/>
 	<GridLayout class="pageBackground">
-	    <StackLayout >
+	    <StackLayout>
 		<Label text="All exercises" textWrap="true"  height="50" class="myLabel" style="horizontal-align: center"/>
 		<ListView items="items" id="listViewId"  itemTap="onItemTapped"  height="400" >
 			<ListView.itemTemplate  >
