@@ -15,7 +15,6 @@ function onNavigatedTo(args){
  topmost = frameModule.topmost();
  listt =  page.navigationContext.items;
  day = page.navigationContext.listTitle;
-
  swipe = page.getViewById("swipe");
 
 }
@@ -31,9 +30,7 @@ exports.onItemTapped = function(args){
 
         data.delete(className,objectId);
         listt.splice(args.index,1);
-
       }
-
     });
 
   var navigationEntry = {

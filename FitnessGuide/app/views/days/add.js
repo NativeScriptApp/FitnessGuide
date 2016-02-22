@@ -23,23 +23,19 @@ function onNavigatedTo(args){
 
   page.bindingContext = page.navigationContext;
   className = page.navigationContext.className + "Exercise";
-
 }
 
 function onPageClosed() {
 	global.exercises = new observableArrayModule.ObservableArray();
 }
 
-
 function onItemTapped(args){
   var index = args.index;
-
 
   mainMuscle = global.exercises.getItem(index).mainMuscle;
   subMuscle = global.exercises.getItem(index).subMuscle;
   image = global.pictures.getItem(index);
   explanation = global.exercises.getItem(index).explanation;
-
 
 };
 function imageFromSource(imageName) {
@@ -47,52 +43,23 @@ function imageFromSource(imageName) {
 };
 
 function addButton (){
-	console.log(className);
-	console.log(mainMuscle);
-	console.log(subMuscle);
-	console.log(image);
-	console.log(explanation);
   if (mainMuscle != undefined) {
 
-   data.post(className,mainMuscle,subMuscle,image,explanation);
-   var objectId = global.objectId;
+    data.post(className,mainMuscle,subMuscle,image,explanation);
+    var objectId = global.objectId;
 
-   console.log(objectId);
+    console.log(objectId);
    
-   var obj = {mainMuscle: mainMuscle,
+    var obj = {mainMuscle: mainMuscle,
     subMuscle: subMuscle ,
     objectId: objectId,
     pics : imageFromSource(image),
     explanation: explanation};
-    if (className == "MondayExercise") {
-    	global.mondayExercises.push(obj);
-      obj = {};
-    }
-    else if (className == "TuesdayExercise") {
-    	global.tuesdayExercises.push(obj);
-       obj = {};
-    }
-    else if (className == "WednesdayExercise") {
-    	global.wednesdayExercises.push(obj);
-       obj = {};
-    }
-    else if (className == "ThursdayExercise") {
-    	global.thursdayExercises.push(obj);
-       obj = {};
-    }
-    else if (className == "FridayExercise") {
-    	global.fridayExercises.push(obj);
-       obj = {};
-    }
-    else if (className == "SaturdayExercise") {
-    	global.saturdayExercises.push(obj);
-       obj = {};
-    }
-    else if (className == "SundayExercise") {
-    	global.sundayExercises.push(obj);
-       obj = {};
-    }
-  } else {
+
+    global.all.push(obj);
+    obj = {};
+  } 
+  else {
     alert('Not added! You did not select an exercise! ');
   }
   mainMuscle = undefined;

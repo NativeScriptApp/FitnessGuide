@@ -17,84 +17,33 @@ var parseQuery = (function(){
       var parseQuery = {
       	get:function(className){	
 
-      		var GameScore = Parse.Object.extend(className);
-      		var query = new Parse.Query(GameScore);
+      		var Exercise = Parse.Object.extend(className);
+      		var query = new Parse.Query(Exercise);
       		query.find({
-      			success: function(gameScore) {
+      			success: function(result) {
 
-      				for (var i = 0; i < gameScore.length; i++) {
+      				for (var i = 0; i < result.length; i++) {
       					if(className == "Exercise"){
-                        global.pictures.push(gameScore[i].get("image"));
+                        global.pictures.push(result[i].get("image"));
                         
-                        global.exercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
-                           subMuscle: gameScore[i].get("subMuscle"),
-                           pics : imageFromSource(gameScore[i].get("image")),
-                           explanation: gameScore[i].get("explanation")});
-
+                        global.exercises.push({mainMuscle: result[i].get("mainMuscle"),
+                           subMuscle: result[i].get("subMuscle"),
+                           pics : imageFromSource(result[i].get("image")),
+                           explanation: result[i].get("explanation")});
                      }
-
-                     else if(className == "MondayExercise"){
-                        global.mondayExercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
-                           subMuscle: gameScore[i].get("subMuscle"),
-                           objectId: gameScore[i].id,
-                           pics : imageFromSource(gameScore[i].get("image")),
-                           explanation: gameScore[i].get("explanation")});
-
-                     }
-                     else if(className == "TuesdayExercise"){
-                        global.tuesdayExercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
-                           subMuscle: gameScore[i].get("subMuscle"),
-                           objectId: gameScore[i].id,
-                           pics : imageFromSource(gameScore[i].get("image")),
-                           explanation: gameScore[i].get("explanation")});
-
-                     }
-                     else if(className == "WednesdayExercise"){
-                        global.wednesdayExercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
-                           subMuscle: gameScore[i].get("subMuscle"),
-                           objectId: gameScore[i].id,
-                           pics : imageFromSource(gameScore[i].get("image")),
-                           explanation: gameScore[i].get("explanation")});
-
-                     }
-                     else if(className == "ThursdayExercise"){
-                        global.thursdayExercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
-                           subMuscle: gameScore[i].get("subMuscle"),
-                           objectId: gameScore[i].id,
-                           pics : imageFromSource(gameScore[i].get("image")),
-                           explanation: gameScore[i].get("explanation")});
-
-                     }
-                     else if(className == "FridayExercise"){
-                        global.fridayExercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
-                           subMuscle: gameScore[i].get("subMuscle"),
-                           objectId: gameScore[i].id,
-                           pics : imageFromSource(gameScore[i].get("image")),
-                           explanation: gameScore[i].get("explanation")});
-
-                     }
-                     else if(className == "SaturdayExercise"){
-                        global.saturdayExercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
-                           subMuscle: gameScore[i].get("subMuscle"),
-                           objectId: gameScore[i].id,
-                           pics : imageFromSource(gameScore[i].get("image")),
-                           explanation: gameScore[i].get("explanation")});
-
-                     }
-                     else if(className == "SundayExercise"){
-                        global.sundayExercises.push({mainMuscle: gameScore[i].get("mainMuscle"),
-                           subMuscle: gameScore[i].get("subMuscle"),
-                           objectId: gameScore[i].id,
-                           pics : imageFromSource(gameScore[i].get("image")),
-                           explanation: gameScore[i].get("explanation")});
-
-                     } 
-                     
                      else if (className == "Gallery") {
-                        global.photos.push({itemImage:gameScore[i].get("itemImage")});
+                        global.photos.push({itemImage:result[i].get("itemImage")});
+                     }
+                     else {
+                        global.all.push({mainMuscle: result[i].get("mainMuscle"),
+                           subMuscle: result[i].get("subMuscle"),
+                           objectId: result[i].id,
+                           pics : imageFromSource(result[i].get("image")),
+                           explanation: result[i].get("explanation")});
+
                      }
 
-                     console.log(gameScore[i].get("mainMuscle"));
+                     console.log(result[i].get("mainMuscle"));
                   }
                },
                error: function(object, error) {
@@ -102,72 +51,71 @@ var parseQuery = (function(){
                }
             });
       	},
-        
-   				//post ne raboti zasega!
-   				post:function(className,mainMuscle,subMuscle,image,explanation){
-   					var Exercise = Parse.Object.extend(className);
-   					var exercise = new Exercise();
+       
+        post:function(className,mainMuscle,subMuscle,image,explanation){
+          var Exercise = Parse.Object.extend(className);
+          var exercise = new Exercise();
 
-   					exercise.set("mainMuscle", mainMuscle);
-   					exercise.set("subMuscle", subMuscle);
-   					exercise.set("image", image);
-                  exercise.set("explanation", explanation);
+          exercise.set("mainMuscle", mainMuscle);
+          exercise.set("subMuscle", subMuscle);
+          exercise.set("image", image);
+          exercise.set("explanation", explanation);
 
-                  exercise.save(null, {
-                     success: function(exercise) {
-                        global.objectId = exercise.id;
-                        console.log(global.objectId);
-                       alert('Exercise successfully added ! ');
-                    },
-                    error: function(exercise, error) {
-                       alert('Error: exercise not added: ' + error.message);
-                    }
-                 });
+          exercise.save(null, {
+            success: function(exercise) {
+               global.objectId = exercise.id;
+               console.log(global.objectId);
+               alert('Exercise successfully added ! ');
+            },
+            error: function(exercise, error) {
+             alert('Error: exercise not added: ' + error.message);
+          }
+       });
+       },
+       postGallery:function(className,itemImage){
+         var Exercise = Parse.Object.extend(className);
+         var exercise = new Exercise();
+
+         exercise.set("itemImage", itemImage);
+
+         exercise.save(null, {
+            success: function(exercise) {
+               alert('Exercise successfully added ! ');
+            },
+            error: function(exercise, error) {
+               alert('Error: exercise not added: ' + error.message);
+            }
+         });
+      },
+      delete:function(className,objectId){
+
+         var yourClass = Parse.Object.extend(className);
+         var query = new Parse.Query(yourClass);
+
+         query.get(objectId, {
+           success: function(yourObj) {
+
+              yourObj.destroy({
+               success: function(myObject) {
+                  alert('Deleted successfully ! ');
                },
-               postGallery:function(className,itemImage){
-                  var Exercise = Parse.Object.extend(className);
-                  var exercise = new Exercise();
-
-                  exercise.set("itemImage", itemImage);
-
-                  exercise.save(null, {
-                     success: function(exercise) {
-                        alert('Exercise successfully added ! ');
-                     },
-                     error: function(exercise, error) {
-                        alert('Error: exercise not added: ' + error.message);
-                     }
-                  });
-               },
-               delete:function(className,objectId){
-
-                  var yourClass = Parse.Object.extend(className);
-                  var query = new Parse.Query(yourClass);
-
-                  query.get(objectId, {
-                   success: function(yourObj) {
-
-                      yourObj.destroy({
-                        success: function(myObject) {
-                           alert('Deleted successfully ! ');
-                        },
-                        error: function(myObject, error) {
-                           alert('Error: exercise not deleted: ' + error.message);
-                        }
-                     });
-
-                   },
-                   error: function(object, error) {
-
-                   }
-                }); 
+               error: function(myObject, error) {
+                  alert('Error: exercise not deleted: ' + error.message);
                }
-            };
+            });
 
-            return parseQuery;
-         })();
+           },
+           error: function(object, error) {
 
-         exports.get = parseQuery.get;
-         exports.post = parseQuery.post;
-         exports.postGallery = parseQuery.postGallery;
-         exports.delete = parseQuery.delete;
+           }
+        }); 
+      }
+   };
+
+   return parseQuery;
+})();
+
+exports.get = parseQuery.get;
+exports.post = parseQuery.post;
+exports.postGallery = parseQuery.postGallery;
+exports.delete = parseQuery.delete;

@@ -1,6 +1,4 @@
 'use strict';
-var observableModule = require("data/observable");
-var source = new observableModule.Observable();
 
 function onNavigatedTo(args){
 
@@ -18,7 +16,6 @@ function onNavigatedTo(args){
 				}
 			});
 
-
 	var label = page.getViewById("explanation");
 	label.fontSize = 14;
     label.animate({opacity:0,
@@ -35,8 +32,6 @@ function onNavigatedTo(args){
                 y: 40
             },
         });
-
-
 
 	label.on('doubleTap', function (args) {
 

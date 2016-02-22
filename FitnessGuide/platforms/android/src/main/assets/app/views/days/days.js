@@ -25,36 +25,13 @@ exports.onBtnTapped = function(args){
 	var day = args.object.text;
 	var currrentDay = (args.object.text) + "Exercise";
 	var list;
-
+    global.all.length = 0;
 	data.get(currrentDay);
-
-	if(day == "Monday"){
-
-    	list = global.mondayExercises;
-	}
-	else if(day == "Tuesday"){
-    	list = global.tuesdayExercises;
-	}
-	else if(day == "Wednesday"){
-    	list = global.wednesdayExercises;
-	}
-	else if(day == "Thursday"){
-    	list = global.thursdayExercises;
-	}
-	else if(day == "Friday"){
-    	list = global.fridayExercises;
-	}
-	else if(day == "Saturday"){
-    	list = global.saturdayExercises;
-	}
-	else if(day == "Sunday"){
-    	list = global.sundayExercises;
-	}
-
+    list = global.all;
+	
 	var navigationEntry = {
 		moduleName: "./views/days/exercisesList",
-		context: {exText: "hfhghjgjhfjhfhgfhjgfjhfhjs",
-		listTitle: args.object.text,
+		context: { listTitle: args.object.text,
 		items: list},
 		animated: true
 	};
