@@ -1,6 +1,6 @@
 var view = require("ui/core/view");
 var pageNavigator = require("~/common/page-navigator");
-var data = require("~/common/data");
+var data = require("~/services/foodServices");
 var items;
 
 var pageModules = (function() {
@@ -23,7 +23,7 @@ var pageModules = (function() {
 				className="AvoidFood";
 			};
 
-			data.getAll(className);
+			data.get(className);
 			items = global.dbData;
 			var context = {
 				listTitle: className,
