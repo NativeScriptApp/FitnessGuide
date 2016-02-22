@@ -27,9 +27,14 @@ var parseQuery = (function(){
                   for (var i = 0; i < result.length; i++) {
                      
                      var food = {
+                           category: result[i].get("category"),
                            firstFood: result[i].get("firstFood"),
                            secondFood: result[i].get("secondFood"),
                            thirdFood: result[i].get("thirdFood"),
+                           proteins: result[i].get("proteins"),
+                           carbohydrates: result[i].get("carbohydrates"),
+                           fats: result[i].get("fats"),
+                           calories: result[i].get("calories"),
                            explanation: result[i].get("explanation"),
                            picture: result[i].get("picture").url()
 
@@ -57,15 +62,15 @@ console.log("post");
          var contentType= "image/jpg";
          var imageFile = new Parse.File(filename, {base64:fileData},contentType);
       console.log("parsefile");
-            food.set("category", "Dinner");
+            food.set("category", object["category"]);
 				food.set("firstFood", object["firstFood"]);
 				food.set("secondFood", object["secondFood"]);
 				food.set("thirdFood", object["thirdFood"]);
             food.set("explanation", object["explanation"]);
-            food.set("calories", 400);
-            food.set("proteins", 40);
-            food.set("carbohydrates", 40);
-            food.set("fats", 20);
+            food.set("calories", object["calories"]);
+            food.set("proteins", object["proteins"]);
+            food.set("carbohydrates", object["carbohydrates"]);
+            food.set("fats", object["fats"]);
             food.set("picture", imageFile);
 
 				food.save(null, {

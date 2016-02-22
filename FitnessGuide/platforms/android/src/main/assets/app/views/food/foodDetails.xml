@@ -7,6 +7,9 @@
 		<StackLayout orientation="vertical">
 			<Label text="Products" textWrap="true" class="myLabel" />
 			<Label text="{{products}}" textWrap="true" />
+			<Label text="Content" textWrap="true" class="myLabel" />
+			<Label text="{{content}}" textWrap="true" />
+			<Label text="{{calories}}" textWrap="true" />
 		    <Label text="Description:" textWrap="true" class="myLabel"  />
 		    <Label text="{{explanation}}" textWrap="true" editable="false" class="explanation" id = "explanation" />
 		</StackLayout>
