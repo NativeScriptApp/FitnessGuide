@@ -1,6 +1,7 @@
 'use strict';
 var observableArrayModule = require("data/observable-array");
 var observableModule = require("data/observable");
+var pageNavigator = require("~/common/page-navigator");
 var cameraModule = require("camera");
 var imageModule = require("ui/image");
 var view = require("ui/core/view");
@@ -44,25 +45,28 @@ var addModule = (function() {
       fats = parseInt(tf_fats.text);
       calories = parseInt(tf_calories.text);
       //image = imageView.imageSource;
-      explanation = tf_explanation;
+      explanation = tf_explanation.text;
       category = items[listPicker.selectedIndex];
+      if (category=="Avoid Food") {
+				category="AvoidFood";
+			};
       console.log(image);
       
-      image = imageSource.fromFile("~/images/1.jpg").toBase64String('.jpg', 100);
+      //image = imageSource.fromFile("~/images/1.jpg").toBase64String('.jpg', 100);
       
       var newFood = {
 	      "firstFood": firstFood,
 	      "secondFood": secondFood,
 	      "thirdFood": thirdFood, 
 	      "proteins":proteins, 
-	      "carbs":carbs, 
+	      "carbohydrates":carbs, 
 	      "fats":fats, 
 	      "calories":calories, 
-	      "image":image, 
+	      "picture":image, 
 	      "explanation":explanation,
 	      "category":category
       };
-
+console.log(firstFood + secondFood+thirdFood+proteins+carbs+fats+calories+category+explanation+image);
     	data.post(newFood);
       	pageNavigator.navigateTo("./views/food/food");
     },	
