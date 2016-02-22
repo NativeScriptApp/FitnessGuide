@@ -51,9 +51,10 @@ var addModule = (function() {
 				category="AvoidFood";
 			};
       console.log(image);
-      
-      //image = imageSource.fromFile("~/images/1.jpg").toBase64String('.jpg', 100);
-      
+      if (!image) {
+      	image = imageSource.fromFile("~/images/1.jpg").toBase64String('.jpg', 100);
+      };
+
       var newFood = {
 	      "firstFood": firstFood,
 	      "secondFood": secondFood,

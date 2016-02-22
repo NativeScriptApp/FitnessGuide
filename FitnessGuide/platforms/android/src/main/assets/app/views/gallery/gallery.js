@@ -1,8 +1,8 @@
 'use strict';
 var modelModule = require("./gallery-view-model");
 var model = modelModule.photoAlbumModel;
-
-
+var data = require("~/common/data");
+var items;
 
 var pagesModule = require("ui/page");
 var view = require("ui/core/view");
@@ -13,9 +13,11 @@ var pageModules = (function() {
 	var pageModules = {
 		 pageLoaded:function(args) {
 		    var page = args.object;
-		    
-		    page.bindingContext = model;
+		    data.getGallery();
+		    console.log(global.photos.length);
 
+		    page.bindingContext = model;
+			
 
 		    segmentedBar = view.getViewById(page, "segments");
             segmentedBar.selectedIndex = 3;

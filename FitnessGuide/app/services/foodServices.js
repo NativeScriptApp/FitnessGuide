@@ -23,7 +23,7 @@ var parseQuery = (function(){
             query.find({
                success: function(result) {
                   global.dbData.length = 0;
-               //global.dbData = result.slice(0);
+
                   for (var i = 0; i < result.length; i++) {
                      
                      var food = {
@@ -39,9 +39,7 @@ var parseQuery = (function(){
                            picture: result[i].get("picture").url()
 
                         };
-
-                     global.dbData.push(food);                        
-                     //parseQuery.post(food);
+                     global.dbData.push(food); 
                   }
                },
                error: function(error) {
@@ -73,34 +71,13 @@ var parseQuery = (function(){
 
 				food.save(null, {
 					success: function(food) {
-						console.log('Food successfully added ! ');
+						alert('Food successfully added ! ');
 					},
 					error: function(food,error) {
-						console.log('Error: Food not added: ' + error.message);
+						alert('Error: Food not added: ' + error.message);
 					}
 				});
 		   }
-//          test:function(){   
-// console.log("test");
-//             var table = Parse.Object.extend("Food1");
-//             var query = new Parse.Query(table);
-// console.log(query);
-//             query.find({
-//                success: function(result) {
-//                   console.log(result.length);
-//                   //global.dbData.length = 0;
-//                //global.dbData = result.slice(0);
-//                   for (var i = 0; i < result.length; i++) {
-//                      var saved = result[i];
-//                      console.log(saved.get('picture').url());
-                     
-//                   }
-//                },
-//                error: function(error) {
-//                   console.log("Error: " + error.code + " " + error.message);
-//                }
-//             });
-//          }
 	};
 
 	return parseQuery;
@@ -108,4 +85,3 @@ var parseQuery = (function(){
 
 exports.get = parseQuery.get;
 exports.post = parseQuery.post;
-//exports.test = parseQuery.test;

@@ -7,9 +7,7 @@ var fileSystemModule = require("file-system");
 var directory = "/../images/";
 
 var parseQuery = (function(){
-	
 
-      // function za sazdavane na patq do snimkata
       function imageFromSource(imageName) {
       	return imageSourceModule.fromFile(fileSystemModule.path.join(__dirname, directory + imageName + ".jpg"));
       };
@@ -72,18 +70,48 @@ var parseQuery = (function(){
           }
        });
        },
-       postGallery:function(className,itemImage){
-         var Exercise = Parse.Object.extend(className);
-         var exercise = new Exercise();
+       getGallery:function(){   
 
-         exercise.set("itemImage", itemImage);
+            var table = Parse.Object.extend("Gallery");
+            var query = new Parse.Query(table);
+            query.descending("createdAt");
 
-         exercise.save(null, {
-            success: function(exercise) {
-               alert('Exercise successfully added ! ');
+            query.find({
+               success: function(result) {
+                  //global.photos.length = 0;
+
+                  for (var i = 0; i < result.length; i++) {
+                     var pic = {
+                           itemImage: result[i].get("itemImage").url()
+                        };
+
+                     global.photos.push(pic); 
+                  }
+               },
+               error: function(error) {
+                  console.log("Error: " + error.code + " " + error.message);
+               }
+            });
+         },
+
+       postGallery:function(itemImage){
+         var table = Parse.Object.extend("Gallery");
+         var myPhoto = new table();
+
+         var fileData = itemImage.toBase64String('.jpg', 100); 
+         console.log(fileData);
+         var filename= "picture.jpg";
+         var contentType= "image/jpg";
+         var imageFile = new Parse.File(filename, {base64:fileData},contentType);
+         console.log(imageFile);
+         myPhoto.set("itemImage", imageFile);
+
+         myPhoto.save(null, {
+            success: function(myPhoto) {
+               alert('MyPhoto successfully added ! ');
             },
-            error: function(exercise, error) {
-               alert('Error: exercise not added: ' + error.message);
+            error: function(myPhoto, error) {
+               alert('Error: MyPhoto not added: ' + error.message);
             }
          });
       },
@@ -118,4 +146,5 @@ var parseQuery = (function(){
 exports.get = parseQuery.get;
 exports.post = parseQuery.post;
 exports.postGallery = parseQuery.postGallery;
+exports.getGallery = parseQuery.getGallery;
 exports.delete = parseQuery.delete;
