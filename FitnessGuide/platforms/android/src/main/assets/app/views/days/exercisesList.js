@@ -1,7 +1,10 @@
+'use strict';
 var observableModule = require("data/observable");
 var source = new observableModule.Observable();
 var data = require("~/common/data");
+var frameModule = require("ui/frame");
 var observableArrayModule = require("data/observable-array");
+var topmost;
 var listt; 
 var day;
 var swipe;
@@ -9,6 +12,7 @@ function onNavigatedTo(args){
 
  var page = args.object;
  page.bindingContext = page.navigationContext;
+ topmost = frameModule.topmost();
  listt =  page.navigationContext.items;
  day = page.navigationContext.listTitle;
 
@@ -18,15 +22,19 @@ function onNavigatedTo(args){
 
 exports.onItemTapped = function(args){
 
-  swipe.on('swipe', function () {
+  swipe.on('swipe', function (direction) {
       //delete
+      if (direction.direction == 2) {
 
-  var className = day + "Exercise";
-  var objectId = listt.getItem(args.index).objectId;
+        var className = day + "Exercise";
+        var objectId = listt.getItem(args.index).objectId;
 
-  data.delete(className,objectId);
-  listt.splice(args.index,1);
-  });
+        data.delete(className,objectId);
+        listt.splice(args.index,1);
+
+      }
+
+    });
 
   var navigationEntry = {
     moduleName: "./views/days/details",
@@ -40,6 +48,7 @@ exports.onItemTapped = function(args){
 
   topmost.navigate(navigationEntry);
 };
+
 exports.goToAddPage = function(args){
 
  var navigationEntry = {

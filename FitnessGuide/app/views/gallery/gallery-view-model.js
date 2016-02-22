@@ -1,3 +1,4 @@
+'use strict';
 var observable = require("data/observable");
 var imageSourceModule = require("image-source");
 var fileSystemModule = require("file-system");

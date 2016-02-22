@@ -12,6 +12,7 @@ global.sundayExercises = new observableArrayModule.ObservableArray();
 global.dbData = new observableArrayModule.ObservableArray();
 global.pictures = new observableArrayModule.ObservableArray();
 global.photos = new observableArrayModule.ObservableArray();
+global.objectId;
 
 application.mainModule = "views/main/main-page";
 application.cssFile = "./styles/app.css";

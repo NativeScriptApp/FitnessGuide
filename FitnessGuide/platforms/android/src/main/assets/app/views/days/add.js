@@ -1,19 +1,22 @@
+'use strict';
 var observableArrayModule = require("data/observable-array");
 var imageSourceModule = require("image-source");
 var fileSystemModule = require("file-system");
 var directory = "/../../images/";
-
+var frameModule = require("ui/frame");
 var data = require("~/common/data");
 var className;
 var mainMuscle;
 var subMuscle;
 var image;
 var explanation;
+var topmost;
 
 function onNavigatedTo(args){
 
 	var page = args.object; 
 	var listView = page.getViewById("listViewId");
+  topmost = frameModule.topmost();
   
   data.get("Exercise");
   listView.items = global.exercises;
@@ -52,10 +55,13 @@ function addButton (){
   if (mainMuscle != undefined) {
 
    data.post(className,mainMuscle,subMuscle,image,explanation);
+   var objectId = global.objectId;
 
-
+   console.log(objectId);
+   
    var obj = {mainMuscle: mainMuscle,
     subMuscle: subMuscle ,
+    objectId: objectId,
     pics : imageFromSource(image),
     explanation: explanation};
     if (className == "MondayExercise") {

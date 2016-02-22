@@ -1,3 +1,4 @@
+'use strict';
 var observableModule = require("data/observable");
 var source = new observableModule.Observable();
 
@@ -6,7 +7,7 @@ function onNavigatedTo(args){
 	var page = args.object;
 	page.bindingContext = page.navigationContext;
 
-	myImage = page.getViewById("myImage");
+	var myImage = page.getViewById("myImage");
 
 	myImage.animate({
 				duration: 2000,

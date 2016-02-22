@@ -140,6 +140,8 @@ var parseQuery = (function(){
 
                   exercise.save(null, {
                      success: function(exercise) {
+                        global.objectId = exercise.id;
+                        console.log(global.objectId);
                        alert('Exercise successfully added ! ');
                     },
                     error: function(exercise, error) {
