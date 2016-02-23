@@ -1,5 +1,5 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-    <GridLayout rows="*,50,auto">
+    <GridLayout rows="*,50,auto" class="pageBackground">
 
      <ListView items="{{ photoItems }}"  row="0"  width="200" height="400"> 
       <ListView.itemTemplate>                
@@ -9,7 +9,7 @@
         </StackLayout>               
       </ListView.itemTemplate>
      </ListView> 
-     <Button  text="{{ message }}"  row="1" tap="{{ tapAction }}"/>
+     <Button  text="{{ message }}"  row="1" tap="{{ tapAction }}" class="addBtn2" margin-bottom="40"/>
    <GridLayout  verticalAlignment="bottom" row="2">
 
     <SegmentedBar id="segments" class="FontAwesome">

@@ -30,12 +30,20 @@
 }
 
 .foodBtn{
-	background-color: gray;
-	width: 250;
+	color:#007AFF;
+	width: 350;
 	height: 100;
+	font-size: 20;
 	margin-top: 10;
 }
-
+.avoidBtn{
+	color:#007AFF;
+	background-color: #FFCCE5;
+	width: 345;
+	height: 90;
+	font-size: 20;
+	margin-top: 10;
+}
 .foodRedBtn{
 	background-color: red;
 	width: 250;
@@ -64,7 +72,14 @@
 	font-size: 20;
 	height: 60;
 }
-
+.addBtn2{
+	color:#007AFF;
+	font-weight: bold;
+	font-size: 20;
+	height: 60;
+	width: 350;
+	margin-bottom: 20;
+}
 .pics {
 	width: 100;
 	height: 100;

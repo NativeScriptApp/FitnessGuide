@@ -11,22 +11,28 @@ function onNavigatedTo(args){
 	var food = args.context;
 	page.bindingContext = vm.create(food);
 
-	explanation = page.getViewById("explanation");
+	explanation = page.getViewById("explanationText");
+	explanation.fontSize = 14;
 	image = page.getViewById("img");
+	image.width = 100;
+	image.heigth = 100;
 	attachEvents();
 }
 
 function attachEvents(){
 	explanation.on('doubleTap', function (args) {		
-		args.object.fontSize += 1;		
+		explanation.fontSize += 4;		
 	});
 
 	explanation.on('longPress', function (args) {		
-		args.object.fontSize -= 1;		
+		if (explanation.fontSize > 14) {
+		explanation.fontSize -= 4;	
+		}	
 	});
 
 	image.on('pinch', function (args) {
-		image.width *= args.scale;			
+		image.width *= args.scale;
+		image.heigth *= args.scale;			
 	});
 }
 
