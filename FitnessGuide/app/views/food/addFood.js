@@ -12,7 +12,7 @@ var frameModule = require("ui/frame");
 var data = require("~/services/foodServices");
 var tf_firstFood, tf_secondFood, tf_thirdFood, tf_proteins, tf_carbs, tf_fats, tf_calories, imageView, tf_explanation,listPicker,
 firstFood, secondFood, thirdFood, proteins, carbs, fats, calories, image, explanation,category;
-var items = ["Breakfats","Lunch","Dinner","Avoid Food"];
+var items = ["Breakfast","Lunch","Dinner","Avoid Food"];
 
 var addModule = (function() {
 
@@ -54,7 +54,7 @@ var addModule = (function() {
       if (!image) {
       	image = imageSource.fromFile("~/images/1.jpg").toBase64String('.jpg', 100);
       };
-      
+
       if (firstFood=="") {
         alert("First food is required!");
         return;

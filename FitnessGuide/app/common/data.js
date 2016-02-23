@@ -83,6 +83,7 @@ var parseQuery = (function(){
 
                   for (var i = 0; i < result.length; i++) {
                      var pic = {
+                      itemImage: result[i].get("objectId"),
                            itemImage: result[i].get("itemImage").url(),
                            date: moment(result[i].get("createdAt").toString()).format("DD MMMM YYYY")
                         };
