@@ -29,28 +29,7 @@ exports.LocationViewModel = LocationViewModel;
 
 var model = new LocationViewModel();
 
-function enableLocationTap(args) {
-    var isEnabled = geolocation.isEnabled();
-    if (!isEnabled) {
-        geolocation.enableLocationRequest();
-    }
-}
 
-function getLocationTap(args) {
-    var location = geolocation.getCurrentLocation({
-        desiredAccuracy: 3, 
-        updateDistance: 10, 
-        maximumAge: 20000, 
-        timeout: 5000
-    }).
-    then(function(loc) {
-        if (loc) {
-            model.locations.push(loc);
-        }
-    }, function(e){
-        console.log("Error: " + e.message);
-    });
-}
 
 function showOnMap(args) {
     var toView = "views/location/mapPage"
@@ -59,6 +38,5 @@ function showOnMap(args) {
     pageNavigator.navigateTo(toView,context);
 }
 
-exports.enableLocationTap = enableLocationTap;
-exports.getLocationTap = getLocationTap;
+
 exports.showOnMap = showOnMap;

@@ -4,7 +4,9 @@
       <StackLayout orientation="vertical" verticalAlignment="top">
           <Button text="Enable Location" tap="enableLocationTap" />
           <Button text="Get Location" tap="getLocationTap" />
-          <Button text="Show on map" tap="showOnMap"/>
+          <Label row="0" text="{{'lat: ' + lat + ', long: ' + long }}"/>
+          <!-- <Button text="Show on map" tap="showOnMap"/> -->
+          <WebView src="{{src}}" id="webView" />
         </StackLayout>
 
         </GridLayout>

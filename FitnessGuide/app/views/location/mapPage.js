@@ -2,7 +2,7 @@ var geolocation = require("nativescript-geolocation");
 
 function onNavigatedTo(args) {
     args.object.bindingContext = args.context;
-
+args.context.src = "https://www.google.bg/maps/@" + cords[0] + "," + cords[1] + ",17z";
     var map = args.object.getViewById("map");
 	 console.log("Map found: " + map);
 	 setTimeout(function(){
