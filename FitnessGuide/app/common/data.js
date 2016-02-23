@@ -78,7 +78,7 @@ var parseQuery = (function(){
 
             query.find({
                success: function(result) {
-                  //global.photos.length = 0;
+                  global.photos.length = 0;
 
                   for (var i = 0; i < result.length; i++) {
                      var pic = {
@@ -118,6 +118,29 @@ var parseQuery = (function(){
       delete:function(className,objectId){
 
          var yourClass = Parse.Object.extend(className);
+         var query = new Parse.Query(yourClass);
+
+         query.get(objectId, {
+           success: function(yourObj) {
+
+              yourObj.destroy({
+               success: function(myObject) {
+                  alert('Deleted successfully ! ');
+               },
+               error: function(myObject, error) {
+                  alert('Error: exercise not deleted: ' + error.message);
+               }
+            });
+
+           },
+           error: function(object, error) {
+
+           }
+        }); 
+      },
+      deleteGallery:function(objectId){
+
+         var yourClass = Parse.Object.extend("Gallery");
          var query = new Parse.Query(yourClass);
 
          query.get(objectId, {

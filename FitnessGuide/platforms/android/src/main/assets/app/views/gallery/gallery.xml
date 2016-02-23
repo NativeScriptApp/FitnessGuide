@@ -4,7 +4,7 @@
      <ListView items="{{ photoItems }}"  row="0"  width="200" height="400"> 
       <ListView.itemTemplate>                
         <GridLayout>
-            <Image src="{{ itemImage }}" row="0"/>
+            <Image src="{{ itemImage }}" row="0" itemTap="onItemTapped" id="swipe"/>
         </GridLayout>               
       </ListView.itemTemplate>
      </ListView> 

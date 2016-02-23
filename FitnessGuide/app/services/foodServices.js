@@ -77,7 +77,30 @@ var parseQuery = (function(){
 						alert('Error: Food not added: ' + error.message);
 					}
 				});
-		   }
+		   },
+         delete:function(objectId){
+
+         var yourClass = Parse.Object.extend("Food1");
+         var query = new Parse.Query(yourClass);
+
+         query.get(objectId, {
+           success: function(obj) {
+
+              obj.destroy({
+               success: function(myObject) {
+                  alert('Deleted successfully ! ');
+               },
+               error: function(myObject, error) {
+                  alert('Error: exercise not deleted: ' + error.message);
+               }
+            });
+
+           },
+           error: function(object, error) {
+
+           }
+        }); 
+      }
 	};
 
 	return parseQuery;
@@ -85,3 +108,4 @@ var parseQuery = (function(){
 
 exports.get = parseQuery.get;
 exports.post = parseQuery.post;
+exports.delete = parseQuery.delete;
