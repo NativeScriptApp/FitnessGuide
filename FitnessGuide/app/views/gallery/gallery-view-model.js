@@ -37,9 +37,9 @@ photoAlbumModel.tapAction = function () {
     };
     data.postGallery(picture);
     //global.photos.push(item);
-    //data.getGallery();
+    data.getGallery();
     localDb.Gallery.addPicture(picture.toBase64String('.jpg', 100), new Date());
-    localDb.Gallery.getAll();
+    //localDb.Gallery.getAll();
 });
 
 };

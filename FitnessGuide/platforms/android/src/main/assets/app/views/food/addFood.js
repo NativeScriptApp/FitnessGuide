@@ -54,6 +54,14 @@ var addModule = (function() {
       if (!image) {
       	image = imageSource.fromFile("~/images/1.jpg").toBase64String('.jpg', 100);
       };
+      
+      if (firstFood=="") {
+        alert("First food is required!");
+        return;
+      } else if(secondFood==""){
+        alert("Second food is required!");
+        return;
+      }
 
       var newFood = {
 	      "firstFood": firstFood,
