@@ -78,3 +78,7 @@
 .explanation{
 	background-color:#E6E9EE; 
 }
+
+WebView{
+	border-color: lightblue;
+}
