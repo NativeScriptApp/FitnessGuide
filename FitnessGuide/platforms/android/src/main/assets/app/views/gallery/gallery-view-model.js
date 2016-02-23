@@ -6,14 +6,15 @@ var observableArrayModule = require("data/observable-array");
 var enums = require("ui/enums");
 var data = require("~/common/data");
 var cameraModule = require("camera");
+var localDb = require("~/services/gallerySqliteService");
 
 var localImagesArray = new observableArrayModule.ObservableArray();
 var directory = "/../../res/";
 
 
-// function imageFromSource(imageName) {
-//     return imageSourceModule.fromFile(fileSystemModule.path.join(__dirname, directory + imageName));// tuka +".jpg"
-// };
+function imageFromSource(imageName) {
+    return imageSourceModule.fromFile(fileSystemModule.path.join(__dirname, directory + imageName));// tuka +".jpg"
+};
 
 var photoAlbumModel = new observable.Observable();
 
@@ -36,7 +37,9 @@ photoAlbumModel.tapAction = function () {
     };
     data.postGallery(picture);
     //global.photos.push(item);
-    data.getGallery();
+    //data.getGallery();
+    localDb.Gallery.addPicture(picture.toBase64String('.jpg', 100), new Date());
+    localDb.Gallery.getAll();
 });
 
 };

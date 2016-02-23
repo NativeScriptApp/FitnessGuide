@@ -6,10 +6,12 @@
     }
   },
   "dependencies": {
+    "moment": "^2.11.2",
     "nativescript-geolocation": "0.0.8",
     "nativescript-google-maps-sdk": "^1.2.2",
     "nativescript-googlemaps": "0.0.3",
     "nativescript-push-notifications": "0.0.15",
+    "nativescript-sqlite": "^1.0.8",
     "node-parse-api": "^0.3.8",
     "parse": "^1.7.0",
     "tns-core-modules": "1.5.2"

@@ -1,6 +1,7 @@
 var Parse = require("~/parse").Parse;
 Parse.initialize("yyiYli6L5Kpr4DxaNdzBxX8sw4PzS28PMIOuaywU", "jtXjRMjijevWLMSciiaHB2pnloFpUSC9AHtjE5Q7");
 localStorage = require("localStorage");
+var moment = require('moment');
 
 var imageSourceModule = require("image-source");
 var fileSystemModule = require("file-system");
@@ -82,7 +83,8 @@ var parseQuery = (function(){
 
                   for (var i = 0; i < result.length; i++) {
                      var pic = {
-                           itemImage: result[i].get("itemImage").url()
+                           itemImage: result[i].get("itemImage").url(),
+                           date: moment(result[i].get("createdAt").toString()).format("DD MMMM YYYY")
                         };
 
                      global.photos.push(pic); 
@@ -170,4 +172,5 @@ exports.get = parseQuery.get;
 exports.post = parseQuery.post;
 exports.postGallery = parseQuery.postGallery;
 exports.getGallery = parseQuery.getGallery;
+exports.deleteGallery = parseQuery.deleteGallery;
 exports.delete = parseQuery.delete;

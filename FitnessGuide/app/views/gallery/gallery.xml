@@ -3,9 +3,10 @@
 
      <ListView items="{{ photoItems }}"  row="0"  width="200" height="400"> 
       <ListView.itemTemplate>                
-        <GridLayout>
-            <Image src="{{ itemImage }}" row="0" itemTap="onItemTapped" id="swipe"/>
-        </GridLayout>               
+        <StackLayout>
+          <Label text="{{ date }}" textWrap="true" class="myLabel"/>          
+          <Image src="{{ itemImage }}" row="0" itemTap="onItemTapped" id="swipe"/>
+        </StackLayout>               
       </ListView.itemTemplate>
      </ListView> 
      <Button  text="{{ message }}"  row="1" tap="{{ tapAction }}"/>

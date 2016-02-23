@@ -7,6 +7,7 @@ var imageView;
 var pagesModule = require("ui/page");
 var view = require("ui/core/view");
 var pageNavigator = require("~/common/page-navigator");
+var localDb = require("~/services/gallerySqliteService");
 
 var pageModules = (function() {
 	var segmentedBar;
@@ -14,6 +15,7 @@ var pageModules = (function() {
 		 pageLoaded:function(args) {
 		    var page = args.object;
 		    data.getGallery();
+		    //localDb.Gallery.getAll();
 		    console.log(global.photos.length);
 
 		    page.bindingContext = model;
